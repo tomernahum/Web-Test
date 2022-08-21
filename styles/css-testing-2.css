@@ -1,0 +1,51 @@
+/* Borders */
+
+/* html *     { border: 1px solid rgb(208, 0, 255); } */
+
+body       { border: 2px solid yellow; }
+
+#module-1  { border: 2px solid greenyellow; }
+
+/* ------ */
+
+body {
+    margin: 0px;
+}
+#module-1 {
+    padding: 10px;
+}
+#module-1 * {
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2px;
+
+
+    text-align: center;
+
+    background-color: rgb(238, 238, 255);
+}
+
+#module-1 {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    padding: 0px
+
+}
+
+
+#hello-p {
+
+    background-color: #0fbfff;
+
+    /* margin-bottom: 2px; */
+    border-bottom: 2px solid black
+}
+#two-u-p {
+    /* margin-top: 0px; */
+}
+#three-p {
+}
+
