@@ -3,7 +3,7 @@
 
 body       { border: 2px solid yellow; }
 
-.module-1  { 
+.module-a  { 
     border: 2px solid greenyellow; 
     box-sizing: content-box;
 }
@@ -23,7 +23,7 @@ body {
 
 
 /* --- Module 1 --- */
-.module-1 {
+.module-a {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -36,7 +36,7 @@ body {
     list-style-type: none;
 }
 
-.module-1 * {
+.module-a * {
     margin: 0px;
     margin-left: auto;
     margin-right: auto;
@@ -48,13 +48,13 @@ body {
 
     background-color: rgb(238, 238, 255);
 }
-.module-1 li:last-child,
-.module-1 li:last-child *{
+.module-a li:last-child,
+.module-a li:last-child *{
     margin-bottom: 0px;
     /* color: white; */ 
 }
 
-.module-1 li:first-child * 
+.module-a li:first-child * 
 {
     background-color: #0fbfff;
     border-bottom: 2px solid black;
@@ -72,17 +72,26 @@ body {
 
 
 /* ---- Module 2 ---- */
-/* Should these be in separate style sheets? maybe that wouldn't come up in a practical example idk*/
 
-#module-2 {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+#test-span {
+    color: blue;
     
-    padding: 0px;
-    margin-top: 20px;
-    margin-bottom: 8px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
 
-    list-style-type: none;
+    display: inline;  /* Default for span is inline */
 }
 
+
+
+#module-3 {
+    padding: 10px;
+    background-color: ghostwhite;
+    border: 10px solid black;
+    
+    /* box-sizing: content-box; */
+    width: 50%;
+    margin: 50px, auto;
+}
