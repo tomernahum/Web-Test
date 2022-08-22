@@ -148,6 +148,9 @@
 .footer{
     display: flex;
     /* justify-content: space-between; */
+
+    /* margin-top: 100px; */
+    /* There are also ways to make the footer stick to the bottom so maybe i will do that*/
 }
 
 .footer-item {
