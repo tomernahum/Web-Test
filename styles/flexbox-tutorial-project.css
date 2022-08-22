@@ -23,10 +23,11 @@
     justify-content: space-between;
 
     
-    
-    /* width: 100000000px;
-    padding-left: 20px;
-    padding-right: 20px; */
+    padding-left: 10px;
+    padding-right: 10px;
+
+    /* is the below necessary? to make it stretch all the way out? */
+    /* width: 100000000px; */
     
 }
 
