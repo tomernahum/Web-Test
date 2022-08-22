@@ -97,13 +97,17 @@
     
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 
     /* margin-top: 15px; */
+    
+    /* flex-wrap: wrap; */
 }
 
 .logo {
     align-self: center;
+
+    /* todo: fix the scaling on mobile i think its cause the image is too big it dont wanna work and i am tired at time of writing */
 }
 
 .social,
