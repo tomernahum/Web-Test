@@ -106,8 +106,12 @@
 
 .logo {
     align-self: center;
+}
 
-    /* todo: fix the scaling on mobile i think its cause the image is too big it dont wanna work and i am tired at time of writing */
+.logo img,
+.social img {
+    width: 100%;
+    /* I dont fully understand what this does, but it makes the image shrink so good enough for now! */
 }
 
 .social,
