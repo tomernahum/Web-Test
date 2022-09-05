@@ -34,7 +34,7 @@ body {
 
 .container > *{
     /* width: 100%; */
-    width:1000px;
+    width:1010px;
 
 
     /* For testing */
@@ -53,8 +53,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    margin:10px;
-    margin-top: 15px;
+    margin:17px;
 
 }
 
@@ -65,9 +64,10 @@ body {
 }
 
 .header-container .header .header-links * {
-    margin-left: 20px;
+    margin-left: 30px;
     
     font-size: 18px;
+    font-weight: 300;
     color: #E5E7EB
 
 }
@@ -84,9 +84,14 @@ body {
 
 /* Hero */
 
+/* replace div with hero once that is being worked on */
+.hero-container div{
+    margin-top: 70px;
+}
 
 
-/* Colors & Fonts*/
+
+/* Colors & Fonts    Actually I will probably not have a seperate section for this*/
 
 * {
     font-family: "Roboto";   /* This is installed locally and imported at the top*/
