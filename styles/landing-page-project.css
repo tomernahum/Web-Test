@@ -1,0 +1,75 @@
+@import "fonts.css";
+
+
+/* * {border: 0.5px solid blue;} */
+body {border: 4px solid orange;}
+/* html {border: 2px solid green;} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    /* this doesnt feel like its working*/
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.container {
+    /* width: 700px; */
+    display: flex;
+    justify-content:center;
+    margin: 10px;
+    /* Above line will be commented out for non-testing version */
+
+    
+    border: 5px solid purple;
+}
+
+.container > *{
+    /* width: 100%; */
+    width: 900px;
+
+    border: 5px solid cyan;
+}
+
+
+/* Header */
+.header-container .header {
+    display: flex;
+    justify-content: space-between;
+
+    /* width:700px; */
+}
+
+.header-container .header .header-links{
+    display:flex;
+    justify-content: space-between;
+}
+
+.header-container .header .header-links * {
+    margin-left: 20px;
+}
+
+
+/* Colors & Fonts*/
+
+* {
+    font-family: "Roboto";   /* This is installed locally and imported at the top*/
+}
+
+
+.header-container, .hero-container {
+    background-color: #1F2937;
+    color: white;
+}
+
+
+
+
+
+
+
