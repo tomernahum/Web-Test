@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://google-webfonts-helper.herokuapp.com/fonts/roboto?subsets=latin
+HostUrl=https://google-webfonts-helper.herokuapp.com/api/fonts/roboto?download=zip&subsets=latin&variants=900,900italic&formats=woff,woff2
