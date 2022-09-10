@@ -1,7 +1,7 @@
 @import "fonts.css";
 
 
-
+/* Font and color variables.... */
 :root {
     --dark-color: #1F2937;
     --grey-color: #E5E7EB;
@@ -10,7 +10,9 @@
     --action-color: #3882F6;
 
 
-    /* WIP/test - not yet used anywhere */
+    
+    /* Below this is WIP */
+    /*(may be dumb idk(could just target elements directly....) */
     --header-background-color: var(--dark-color);
     --hero-background-color: var(--dark-color);
     
@@ -40,6 +42,12 @@
     --quote-text-style: italic;
 
 }
+
+* {
+    font-family: "Roboto";   /* This is installed locally and imported at the top*/
+}
+
+
 
 /* * {border: 0.5px solid blue;} */
 /* body {border: 4px solid orange;} */
@@ -87,6 +95,10 @@ body {
 
 /* Header */
 
+.header-container{
+    background-color: var(--dark-color);
+}
+
 
 .header-container .header {
     display: flex;
@@ -126,6 +138,10 @@ body {
 
 /* Hero */
 
+.hero-container {
+    background-color: var(--dark-color);
+}
+
 .hero-container .hero{
     margin-top: 100px;
     margin-bottom: 125px;
@@ -161,12 +177,21 @@ body {
 
 
 .signup-button {
+    background-color: var(--call-to-action-background-color);
+    color: var(--white-color);
+    font-size: 18px;
+    font-weight: 500;
+    
     border: none;
-    padding: 10px 40px;
+    padding: 8px 35px;
     border-radius: 8px;
 
-
-
+    cursor: pointer;
+    transition: 0.4s;
+}
+.signup-button:hover{
+    background-color: var(--grey-color);
+    color: var(--dark-color);
 }
 
 
@@ -178,12 +203,6 @@ body {
 
 * {
     font-family: "Roboto";   /* This is installed locally and imported at the top*/
-}
-
-
-.header-container, .hero-container {
-    background-color: #1F2937;
-    color: white;
 }
 
 
