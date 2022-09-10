@@ -1,6 +1,46 @@
 @import "fonts.css";
 
 
+
+:root {
+    --dark-color: #1F2937;
+    --grey-color: #E5E7EB;
+    --light-color: auto(); /* Dont know if this works or not (not tested) */
+    --white-color: #F9FAF8;
+    --action-color: #3882F6;
+
+
+    /* WIP/test - not yet used anywhere */
+    --header-background-color: var(--dark-color);
+    --hero-background-color: var(--dark-color);
+    
+    --main-text-color: var(--white-color);
+    --main-text-size: 48px;
+    --main-text-weight: 900;
+
+    --secondary-text-color: var(--grey-color);
+    --secondary-text-size: 18px;
+    --secondary-text-weight: 300;
+
+    --button-background-color: var(--action-color);
+    --call-to-action-background-color: var(--action-color);
+
+    --information-background-color: auto() ;   /* Not sure if this works (not tested)*/
+
+    --information-header-text-color: var(--dark-color);
+    --information-header-text-size: 36px;
+    --information-header-text-weight: 900;
+    
+    
+    --quote-section-background-color: var(--grey-color) ;
+
+    --quote-text-color: var(--dark-color);
+    --quote-text-size: 36px;
+    --quote-text-weight: 300;
+    --quote-text-style: italic;
+
+}
+
 /* * {border: 0.5px solid blue;} */
 /* body {border: 4px solid orange;} */
 /* html {border: 2px solid green;} */
@@ -61,6 +101,8 @@ body {
     display:flex;
     justify-content: space-between;
     /* align-items: center; */
+
+    margin-right:5px;
 }
 
 .header-container .header .header-links * {
@@ -102,7 +144,7 @@ body {
 
 .hero .hero-text .signup-button {
     margin-top: 10px;
-    background-color: blue;
+    /* Sign up button is defined on its own further down */
 }
 
 .hero-container .hero-text .hero-main-text {
@@ -118,7 +160,14 @@ body {
 }
 
 
+.signup-button {
+    border: none;
+    padding: 10px 40px;
+    border-radius: 8px;
 
+
+
+}
 
 
 
