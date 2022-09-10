@@ -147,15 +147,26 @@ body {
     margin-bottom: 125px;
 
     display: flex;
-    /* justify-content: space-between; */
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
 
 }
 
 .hero .hero-image {
+    width: 100%;
+    flex: 1;
+}
+.hero .hero-image img {
+    width: 100%
 }
 
 .hero .hero-text {
-    margin-right: 50px;
+    /* width: 45%; */
+    flex: 1;
+    /* may be better way to do this like w margin ^ */
+
+    /* display:flex; */
+    /* flex-direction:column; */
 }
 
 .hero .hero-text .signup-button {
