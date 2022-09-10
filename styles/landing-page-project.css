@@ -34,7 +34,7 @@ body {
 
 .container > *{
     /* width: 100%; */
-    width:1010px;
+    width:1020px;
 
 
     /* For testing */
@@ -53,18 +53,18 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    margin:17px;
+    margin:18px;
 
 }
 
 .header-container .header .header-links{
     display:flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .header-container .header .header-links * {
-    margin-left: 30px;
+    margin-left: 25px;
     
     font-size: 18px;
     font-weight: 300;
@@ -84,14 +84,48 @@ body {
 
 /* Hero */
 
-/* replace div with hero once that is being worked on */
-.hero-container div{
-    margin-top: 70px;
+.hero-container .hero{
+    margin-top: 100px;
+    margin-bottom: 125px;
+
+    display: flex;
+    /* justify-content: space-between; */
+
+}
+
+.hero .hero-image {
+}
+
+.hero .hero-text {
+    margin-right: 50px;
+}
+
+.hero .hero-text .signup-button {
+    margin-top: 10px;
+    background-color: blue;
+}
+
+.hero-container .hero-text .hero-main-text {
+    font-size: 48px;
+    font-weight: 800;
+    color: #F9FAF8;
+}
+
+.hero-container .hero-text .hero-secondary-text {
+    font-size: 18px;
+    font-weight: 300;
+    color:  #E5E7EB;
 }
 
 
 
-/* Colors & Fonts    Actually I will probably not have a seperate section for this*/
+
+
+
+
+
+
+/* Colors & Fonts */
 
 * {
     font-family: "Roboto";   /* This is installed locally and imported at the top*/
