@@ -1,8 +1,15 @@
 
 
+let age = 18
 
 
-x = 500
-y = "500"
+let accessAllowed = (age >= 18) ? "adult" : "minor"
 
-console.log(x==y)
+let accessAllowed2 = age >= 18
+
+
+console.log(accessAllowed)
+
+console.log("hello")
+
+console.log(accessAllowed === accessAllowed2)
