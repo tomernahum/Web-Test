@@ -1,15 +1,31 @@
 
 
-let age = 18
+function hello() {
+    alert("hello!")
+    const the_thing_that_is_up = prompt("what's up?")
+    
+    const confirmed = confirm("are you sure \"" + the_thing_that_is_up + "\" is whats up?")
+    if (confirmed) {
+        if (the_thing_that_is_up === "goodbye"){
+            alert("oh okay bye...")
+            return
+        }
+        
+        alert("ok good")
+        alert("I wonder what's up now?")
+        hello()
+    }
+    else {
+        alert("oh okay, ill let you pick again")
+        hello()
+    }
 
 
-let accessAllowed = (age >= 18) ? "adult" : "minor"
+    
+}
 
-let accessAllowed2 = age >= 18
+const test = () => {
+    return
+}
 
-
-console.log(accessAllowed)
-
-console.log("hello")
-
-console.log(accessAllowed === accessAllowed2)
+alert(test)
