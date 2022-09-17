@@ -1,4 +1,4 @@
-
+"use strict";
 
 function hello() {
     alert("hello!")
@@ -23,9 +23,11 @@ function hello() {
 
     
 }
+const hello_button_on_click = () => hello();
 
-const test = () => {
-    return
+
+//im sure theres a better way ill get to it. also should this be done in the html or the js?
+for (i of document.querySelectorAll(".hello-button")) {
+    i.onclick = button_on_click
 }
 
-alert(test)
