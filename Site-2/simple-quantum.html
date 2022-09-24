@@ -6,44 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>Universe Splitter</title>
+    <title>Universe Splitter Online</title>
     
 
     <script defer>
         //practicing dom manipulation:   probably cleaner way to do the css (besides using a file) but I am tired
-        window.onload = () => {
+        function getMainDiv() {
             const mainDiv = document.createElement('div')
 
-                //Title
-                const heading = document.createElement('p')
-                    heading.textContent = "Quantum Splitter"
-                    heading.style.fontSize = "50px";
-                    heading.style.marginLeft
-                mainDiv.appendChild(heading)
+            //Title
+            const heading = document.createElement('p')
+                heading.textContent = "Quantum Splitter"
+                heading.style.fontSize = "50px";
+                heading.style.marginLeft = "10px"
+            mainDiv.appendChild(heading)
 
-                //button
-                const button = document.createElement('button')
-                    button.classList.add('main-button')
-                    button.textContent = "SPLIT UNIVERSE"
-                    button.style.fontSize = "50px";
-                    button.style.width = "500px"
-                    button.style.height = "100px"
-                    
-                    button.addEventListener("click", onButtonClick)
-                mainDiv.appendChild(button)
-        
+            //button
+            const button = document.createElement('button')
+                button.classList.add('main-button')
+                button.textContent = "SPLIT UNIVERSE"
+                button.style.fontSize = "50px";
+                button.style.width = "500px"
+                button.style.height = "100px"
+                
+                //button.addEventListener("click", onButtonClick)
+            mainDiv.appendChild(button)
+
+            //output area
+            const outputArea = document.createElement('p')
+                outputArea.id = "output-area"
+                outputArea.style.fontSize = "50px"
+            mainDiv.appendChild(outputArea)
             
-            document.body.appendChild(mainDiv)
-
-            //obv i will likely learn a framework at some point (such as react) 
+            return mainDiv
         }
         
+        //main
+        const mainDiv = getMainDiv()
+        const outputArea = mainDiv.querySelector("#output-area")
+        const mainButton = mainDiv.querySelector(".main-button")
+        
+        mainButton.addEventListener("click", onButtonClick)
+        
+        window.onload = () => {
+            document.body.appendChild(mainDiv)
+            mainDiv.append("Made by tomer") //who said you need a framework for syncing your data and your DOM?
+        }
+
+
+        function output(s)  {
+            //alert(s)
+            //outputArea.innerText = s
+
+            outputArea.innerText += s + "\n"
+        }
+
         function onButtonClick(e) {
             const universeNumber = splitUniverseFake()
             //const universeNumber = splitUniverseANUOld()
-
-            alert(`You Are in Universe ${universeNumber}`)
+            
+            console.log(universeNumber)
+            //may be a better to do this with actuall error handling or whatever, I will look into that after I learn what errors whatever fetching thing I will use will throw. So this is a placeholder i guess
+            if (universeNumber){
+                output(`You are in Universe ${universeNumber}`)
+            }
+            else {
+                output(`Failed to split the universe`)
+            }
+            
         }
+
+
 
         function splitUniverseFake() {
             return Math.floor((Math.random() * 2)) + 1;
@@ -75,7 +108,8 @@
     <style>
         * {
             margin: 3px;   
-            /* Good Night */
+            /* This is the simplest version of this so I will keep the look 
+            but I do want to modify the styling a little in the future to be more responsive on mobile */
         }
     </style>
 </head>
