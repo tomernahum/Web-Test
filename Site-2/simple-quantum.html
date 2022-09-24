@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Universe Splitter</title>
+    
+
+    <script defer>
+        //practicing dom manipulation:   probably cleaner way to do the css (besides using a file) but I am tired
+        window.onload = () => {
+            const mainDiv = document.createElement('div')
+
+                //Title
+                const heading = document.createElement('p')
+                    heading.textContent = "Quantum Splitter"
+                    heading.style.fontSize = "50px";
+                    heading.style.marginLeft
+                mainDiv.appendChild(heading)
+
+                //button
+                const button = document.createElement('button')
+                    button.classList.add('main-button')
+                    button.textContent = "SPLIT UNIVERSE"
+                    button.style.fontSize = "50px";
+                    button.style.width = "500px"
+                    button.style.height = "100px"
+                    
+                    button.addEventListener("click", onButtonClick)
+                mainDiv.appendChild(button)
+        
+            
+            document.body.appendChild(mainDiv)
+
+            //obv i will likely learn a framework at some point (such as react) 
+        }
+        
+        function onButtonClick(e) {
+            const universeNumber = splitUniverseFake()
+            //const universeNumber = splitUniverseANUOld()
+
+            alert(`You Are in Universe ${universeNumber}`)
+        }
+
+        function splitUniverseFake() {
+            return Math.floor((Math.random() * 2)) + 1;
+        }
+
+        function splitUniverseANUOld() {  //its called old cause there gonna deprecate the api and start charging for it
+            
+            //I dont know async / promises yet. Seems like I need those maybe (will need eventually so might as well learn)
+            // but I am tired for the day and it seems like a whole donkey concept. or i can use xhttp as far as i saw from breif bad reasearch, but that also seems like something you have to learn
+            
+            //this is code I dont understand and I dont know how to get the data out of it lol
+            fetch("https://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint8")
+            .then((response) => response.json())
+            .then((anuData) => {
+                const number = anuData.data["0"]   //returns number 0-255
+                const universeNumber = number % 2
+                console.log(universeNumber)
+                return universeNumber
+                
+            });
+        }
+
+        
+
+
+
+    </script>
+    
+    <style>
+        * {
+            margin: 3px;   
+            /* Good Night */
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
