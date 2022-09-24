@@ -9,7 +9,10 @@
     <title>Universe Splitter Online</title>
     
 
-    <script defer>
+    <script>
+        console.info("universe splitter data courtesy of https://qrng.anu.edu.au/   (their free api is getting deprecated eventually though so if it doesnt work thats probably why)")
+        console.info("Idea from https://cheapuniverses.com/universesplitter/")
+        
         //practicing dom manipulation:   probably cleaner way to do the css (besides using a file) but I am tired
         function getMainDiv() {
             const mainDiv = document.createElement('div')
@@ -33,7 +36,7 @@
             mainDiv.appendChild(button)
 
             //output area
-            const outputArea = document.createElement('p')
+            const outputArea = document.createElement('div')
                 outputArea.id = "output-area"
                 outputArea.style.fontSize = "50px"
             mainDiv.appendChild(outputArea)
@@ -41,17 +44,19 @@
             return mainDiv
         }
         
+        
+
+        
         //main
         const mainDiv = getMainDiv()
         const outputArea = mainDiv.querySelector("#output-area")
         const mainButton = mainDiv.querySelector(".main-button")
         
         mainButton.addEventListener("click", onButtonClick)
-        
+
         window.onload = () => {
             document.body.appendChild(mainDiv)
             mainDiv.append("made by tomer") //who said you need a framework for syncing your data and your DOM?
-            console.log("universe splitter courtesy of     its currently fake but it will probably be ANU quantum once i figure it out")
         }
 
 
@@ -59,13 +64,19 @@
             //alert(s)
             //outputArea.innerText = s
 
-            outputArea.innerText += s + "\n"
+            //outputArea.innerText += s + "\n"
+
+            const element = document.createElement("p")
+            element.innerText = s
+            outputArea.appendChild(element)
+
         }
 
         function onButtonClick(e) {
             //const universeNumber = splitUniverseFake()
             
-            splitUniverseANUOld().then((universeNumber) => {
+            splitUniverseANUOld()
+            .then( universeNumber => {
                 console.log("Universe Number: " + universeNumber)
                 output(`You are in Universe ${universeNumber}`)
             })
@@ -74,20 +85,8 @@
                 output(`error splitting the universe: ${error}`)
             })
             
-
-
-            /*
-            console.log("Universe Number: " + universeNumber)
-            //may be a better to do this with actuall error handling or whatever, I will look into that after I learn what errors whatever fetching thing I will use will throw. So this is a placeholder i guess
-            if (universeNumber){
-                output(`You are in Universe ${universeNumber}`)
-            }
-            else {
-                output(`Failed to split the universe`)
-            }
-            */
-            
         }
+
 
 
 
