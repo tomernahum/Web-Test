@@ -50,7 +50,8 @@
         
         window.onload = () => {
             document.body.appendChild(mainDiv)
-            mainDiv.append("Made by tomer") //who said you need a framework for syncing your data and your DOM?
+            mainDiv.append("made by tomer") //who said you need a framework for syncing your data and your DOM?
+            console.log("universe splitter courtesy of     its currently fake but it will probably be ANU quantum once i figure it out")
         }
 
 
@@ -62,10 +63,21 @@
         }
 
         function onButtonClick(e) {
-            const universeNumber = splitUniverseFake()
-            //const universeNumber = splitUniverseANUOld()
+            //const universeNumber = splitUniverseFake()
             
-            console.log(universeNumber)
+            splitUniverseANUOld().then((universeNumber) => {
+                console.log("Universe Number: " + universeNumber)
+                output(`You are in Universe ${universeNumber}`)
+            })
+            .catch( error => {
+                console.error(error)
+                output(`error splitting the universe: ${error}`)
+            })
+            
+
+
+            /*
+            console.log("Universe Number: " + universeNumber)
             //may be a better to do this with actuall error handling or whatever, I will look into that after I learn what errors whatever fetching thing I will use will throw. So this is a placeholder i guess
             if (universeNumber){
                 output(`You are in Universe ${universeNumber}`)
@@ -73,6 +85,7 @@
             else {
                 output(`Failed to split the universe`)
             }
+            */
             
         }
 
@@ -83,20 +96,42 @@
         }
 
         function splitUniverseANUOld() {  //its called old cause there gonna deprecate the api and start charging for it
-            
-            //I dont know async / promises yet. Seems like I need those maybe (will need eventually so might as well learn)
-            // but I am tired for the day and it seems like a whole donkey concept. or i can use xhttp as far as i saw from breif bad reasearch, but that also seems like something you have to learn
-            
-            //this is code I dont understand and I dont know how to get the data out of it lol
-            fetch("https://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint8")
-            .then((response) => response.json())
-            .then((anuData) => {
-                const number = anuData.data["0"]   //returns number 0-255
-                const universeNumber = number % 2
-                console.log(universeNumber)
-                return universeNumber
+            const fetchAnuJsonPromise = new Promise((resolve, reject) => {
+                fetch('https://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint8')
+                .then((response) => {
+                    if (!(response.ok)) {
+                        reject("problem connecting to ANU quantum server")
+                    } 
+
+                    return response.json()  // response.json() returns a nother promise
+
+                })
+                .then((jsonData) => {
+                    resolve(jsonData)
+                })
+                .catch( error => {
+                    reject(error)
+                })
                 
-            });
+            })
+
+            const getUniverseNumberPromise = new Promise((resolve, reject) => {
+                fetchAnuJsonPromise.then( data => {
+                    const number = data.data[0]
+                    const universeNumber = (number % 2) + 1
+                    resolve(universeNumber)
+                    //reject("testting")
+                })
+                .catch( error => {  //wip
+                    reject(error)
+                })
+            })
+
+            return getUniverseNumberPromise
+            
+            
+            
+            
         }
 
         
