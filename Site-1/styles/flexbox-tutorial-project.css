@@ -133,7 +133,7 @@
     width: 900px;
     display: flex;
 
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     
     /* flex-direction: column-reverse; */
@@ -158,14 +158,16 @@
     display: flex;
     /* justify-content: space-between; */
 
-    /* margin-top: 100px; */
+    margin-top: 50px;
+    
     /* There are also ways to make the footer stick to the bottom so maybe i will do that*/
+    /* position: absolute;
+    bottom: 0;
+    width: 100%; */
 }
 
 .footer-item {
     border: 1px solid #fff;
-    background-color: #D6E9FE;
-    height: 60px;
 
     flex: 1;
 
@@ -174,19 +176,15 @@
 .footer-one,
 .footer-three {
   background-color: #5995DA;
+  
   flex: initial;
   width: 100px;
 }
 
 
 .footer-two{
+    background-color: #D6E9FE;
     text-align: center;
-
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
 }
 
 
