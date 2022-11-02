@@ -1,0 +1,5 @@
+- Color the button and button highlight
+- Add theme switching button
+- Add Name and context of universe splitter app / theory
+
+- maybe make the button truly center idk
