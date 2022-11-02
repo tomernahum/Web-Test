@@ -5,25 +5,43 @@ body * {
 
 body {
     /* border: 5px solid pink; */
-    background-color: var(--background-color);
 }
 
 .container * {
     /* border: 1px solid purple; */
 }
 
+/* Start */
+
 
 :root {
     --max-width: 800px;
     --size: 1.5rem;
     --font-size: 1.5rem; 
+
+    --background-transition-speed: 500ms
+}
+
+.light {
     --background-color: white;
+    --text-color: rgb(5, 5, 50);
+}
+.dark {
+    --background-color: rgb(5, 5, 50);
+    --text-color: white;
+}
+
+
+body, .main-button-container{
+    background-color: var(--background-color);
+    transition: background-color 500ms;
 }
 
 * {
     font-size: calc(var(--font-size) * 1);
 }
 /*  */
+
 
 
 
@@ -54,7 +72,8 @@ body {
     font-size: calc(var(--font-size) * 1.2);
 
 
-    color: rgb(5, 5, 50);
+    color: var(--text-color);
+    transition: color 600ms;
     
 }
 
@@ -83,8 +102,8 @@ body {
     padding: calc(var(--size) * 0.66);
 
 
-    /* background-color: rgb(56, 0, 130); 
-    color: ivory; */
+    /* background-color: rgb(56, 0, 130);  */
+    /* color: ivory; */
 
     /* border: 2px solid rgb(0, 71, 163); */
     border-radius: 0.3rem;
@@ -117,7 +136,8 @@ body {
 
     /* text-align: center; */
 
-    color: rgb(5, 5, 50);
+    color: var(--text-color);
+    transition: color 600ms;
 }
 
 

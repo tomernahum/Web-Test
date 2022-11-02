@@ -1,7 +1,7 @@
 
 
 
-
+const body = document.querySelector("body")
 const mainDiv = document.querySelector("#main-div")
 const outputArea = mainDiv.querySelector(".output-area")
 const mainButton = mainDiv.querySelector(".main-button")
@@ -113,4 +113,15 @@ async function splitUniverseANUOldApi() {  //its called old cause there gonna de
     
     
     
+}
+
+
+
+function toggleTheme(){
+    if (body.classList.contains("light")) {
+        body.classList.replace('light', 'dark')
+    }
+    else {
+        body.classList.replace('dark', 'light')
+    }
 }
