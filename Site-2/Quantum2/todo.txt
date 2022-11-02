@@ -2,4 +2,6 @@
 - Add theme switching button
 - Add Name and context of universe splitter app / theory
 
+- Make it scrollable past the end text for convienient use on mobile
+
 - maybe make the button truly center idk
