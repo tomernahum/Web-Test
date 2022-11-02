@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Quantum Splitter</title>
+
+    <script src="./script.js" defer></script>
+    
+    <style>
+        body * {
+            /* border: 1px solid purple; */
+        }
+        
+        body {
+            /* border: 5px solid pink; */
+            background-color: var(--background-color);
+        }
+
+        .container * {
+            /* border: 1px solid purple; */
+        }
+
+
+        :root {
+            --max-width: 800px;
+            --size: 1.5rem;
+            --font-size: 1.5rem; 
+            --background-color: white;
+        }
+
+        * {
+            font-size: calc(var(--font-size) * 1);
+        }
+        /*  */
+
+        
+
+
+        #main-div {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .container {
+            /* border: 1px solid magenta; */
+            
+            width: 100%;
+            max-width: var(--max-width);
+            /* background-color: pink; */
+            
+        }
+
+        
+
+        
+        
+        #title {
+            text-align: center;
+            text-decoration: underline;
+            font-size: calc(var(--font-size) * 1.2);
+
+
+            color: rgb(5, 5, 50);
+            
+        }
+
+
+
+        .main-button-container {
+            position: sticky;
+            top: 0px;
+            padding-top: 10px;
+            background-color: var(--background-color);
+
+            
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* flex-wrap: wrap; */
+
+            /* border: 1px solid purple; */
+
+
+            
+        }
+        .main-button {
+            width: 100%;
+            height: 100%;
+            padding: calc(var(--size) * 0.66);
+
+
+            /* background-color: rgb(56, 0, 130); 
+            color: ivory; */
+
+            /* border: 2px solid rgb(0, 71, 163); */
+            border-radius: 0.3rem;
+
+
+            align-self: flex-start;
+
+        }
+        .loading-image-container {
+
+            /* height: calc(var(--size) * 2); */
+            /* height: var(--size); */
+            width: var(--size);
+            margin-left: 8px;
+            /* margin-left: 0.5rem; */
+        }
+
+        .loading-image {
+            display: block;
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+        .output-area li{
+            margin-bottom: 30px;
+            line-height: 0.85;
+
+            /* text-align: center; */
+
+            color: rgb(5, 5, 50);
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="main-div">
+        <h1 id="title">Universe Splitter</h1>
+
+
+        <div class="main-button-container container">
+            <button class="main-button">
+                Split Universe
+            </button>
+            <span class="loading-image-container">
+                <img class="loading-image"
+                src="./Spinner-1s-200px.gif" alt="">
+            </span>
+        </div>
+
+        <div class="output-area-container container">
+            <ul class="output-area" style="list-style:none; padding:0;">
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            
+        </div>
+    </div>
+</body>
+</html>
