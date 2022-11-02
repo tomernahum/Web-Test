@@ -125,3 +125,14 @@ function toggleTheme(){
         body.classList.replace('dark', 'light')
     }
 }
+
+// So poky arounds can see that its not finished
+function logToDoList(){
+    fetch("./todo.txt")
+    .then((response)=> response.text())
+    .then((response) => {
+        console.info(response)
+    })
+    .catch((error) => {})//do nothing
+}
+logToDoList()
