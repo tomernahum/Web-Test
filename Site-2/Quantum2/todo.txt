@@ -7,3 +7,4 @@ To Do List:
 - more efficient api calling
 
 - maybe make the button truly center idk
+- maybe make the darkmode toggle to right of main column not whole viewport
