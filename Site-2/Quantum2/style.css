@@ -44,8 +44,10 @@ body {
     padding:0;
 
     position: absolute;
+    /* position: fixed; */
+    /* z-index: 100; */
     top: 3px;
-    right: 5px;
+    right: 8px;
 
     transition: opacity 500ms;
 }
