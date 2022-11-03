@@ -17,7 +17,7 @@ window.onload = () => {
     themeButton.addEventListener("click", onThemeButtonClick)
 }
 
-
+//
 function output(s)  {
     //alert(s)
     //outputArea.innerText = s
@@ -29,8 +29,6 @@ function output(s)  {
     outputArea.appendChild(element)
 
 }
-
-
 
 
 async function onButtonClick(e) {
@@ -72,6 +70,35 @@ function toggleLoading(on) {
         loadingImg.style.display = "none"
     }
 }
+//
+
+//
+function onThemeButtonClick(){
+    toggleTheme()
+}
+
+function toggleTheme(){
+    if (body.classList.contains("light")) {
+        body.classList.replace('light', 'dark')
+    }
+    else {
+        body.classList.replace('dark', 'light')
+    }
+}
+//
+
+
+// So poky arounds can see that its not finished
+function logToDoList(){
+    fetch("./todo.txt")
+    .then((response)=> response.text())
+    .then((response) => {
+        console.info(response)
+    })
+    .catch((error) => {})//do nothing
+}
+logToDoList()
+//
 
 
 
@@ -120,28 +147,3 @@ async function splitUniverseANUOldApi() {  //its called old cause there gonna de
 
 
 
-function toggleTheme(){
-    if (body.classList.contains("light")) {
-        body.classList.replace('light', 'dark')
-    }
-    else {
-        body.classList.replace('dark', 'light')
-    }
-}
-
-function onThemeButtonClick(){
-    console.log("!!!")
-    toggleTheme()
-}
-
-
-// So poky arounds can see that its not finished
-function logToDoList(){
-    fetch("./todo.txt")
-    .then((response)=> response.text())
-    .then((response) => {
-        console.info(response)
-    })
-    .catch((error) => {})//do nothing
-}
-logToDoList()

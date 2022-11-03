@@ -7,4 +7,6 @@ To Do List:
 - more efficient api calling
 
 - maybe make the button truly center idk
-- maybe make the darkmode toggle to right of main column not whole viewport
+- maybe make the darkmode toggle to right of main column not whole viewport (or may put in bottom bar with info button)
+
+- allow selection of universe splitting source (fake, anu, any others)
