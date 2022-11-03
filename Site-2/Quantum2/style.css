@@ -40,7 +40,7 @@ body {
     border: 3px solid black;
     
     width: var(--size);
-    height: calc(var(--size) * 1.3);
+    height: calc(var(--size) * 1.2);
     padding:0;
 
     position: absolute;
@@ -54,6 +54,7 @@ body {
 #dark-button *, 
 #light-button *{
     margin: 0;
+    line-height: 100%;
 }
 
 .light #dark-button {
