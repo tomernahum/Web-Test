@@ -2,6 +2,8 @@
 
 
 const body = document.querySelector("body")
+const themeButton = document.querySelector("#theme-toggle")
+
 const mainDiv = document.querySelector("#main-div")
 const outputArea = mainDiv.querySelector(".output-area")
 const mainButton = mainDiv.querySelector(".main-button")
@@ -12,6 +14,7 @@ window.onload = () => {
 //     const outputArea = mainDiv.querySelector(".output-area")
 //     const mainButton = mainDiv.querySelector(".main-button")
     mainButton.addEventListener("click", onButtonClick)
+    themeButton.addEventListener("click", onThemeButtonClick)
 }
 
 
@@ -125,6 +128,12 @@ function toggleTheme(){
         body.classList.replace('dark', 'light')
     }
 }
+
+function onThemeButtonClick(){
+    console.log("!!!")
+    toggleTheme()
+}
+
 
 // So poky arounds can see that its not finished
 function logToDoList(){

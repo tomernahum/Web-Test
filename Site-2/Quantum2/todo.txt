@@ -1,8 +1,9 @@
 To Do List:
 - Color the button and button highlight
-- Add theme switching button
+- Style the theme switching button
 - Add Name and context of universe splitter app / theory
 
 - Make it scrollable past the end text for convienient use on mobile
+- more efficient api calling
 
 - maybe make the button truly center idk

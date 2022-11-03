@@ -19,6 +19,7 @@ body {
     --size: 1.5rem;
     --font-size: 1.5rem; 
 
+
     --background-transition-speed: 500ms
 }
 
@@ -30,6 +31,31 @@ body {
     --background-color: rgb(5, 5, 50);
     --text-color: white;
 }
+
+/* dark mode button */
+/* Dark mode is controlled by adding dark or light class to body w/ javascripts */
+#theme-toggle {
+    border: 3px solid black;
+    width: var(--size);
+    height: calc(var(--size) * 1.5);
+}
+#theme-toggle, 
+#dark-button-internal, 
+#light-button-internal {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+}
+
+.light #dark-button-internal {
+    opacity: 0%;
+    transition: opacity 500ms;
+}
+.dark #light-button-internal {
+    opacity: 0%;
+    transition: opacity 500ms;
+}
+/* ------ */
 
 
 body, .main-button-container{
