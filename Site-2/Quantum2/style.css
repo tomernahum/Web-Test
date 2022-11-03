@@ -34,26 +34,31 @@ body {
 
 /* dark mode button */
 /* Dark mode is controlled by adding dark or light class to body w/ javascripts */
-#theme-toggle {
+
+#dark-button, 
+#light-button {
     border: 3px solid black;
+    
     width: var(--size);
-    height: calc(var(--size) * 1.5);
-}
-#theme-toggle, 
-#dark-button-internal, 
-#light-button-internal {
+    height: calc(var(--size) * 1.3);
+    padding:0;
+
     position: absolute;
     top: 3px;
     right: 5px;
+
+    transition: opacity 500ms;
+}
+#dark-button *, 
+#light-button *{
+    margin: 0;
 }
 
-.light #dark-button-internal {
+.light #dark-button {
     opacity: 0%;
-    transition: opacity 500ms;
 }
-.dark #light-button-internal {
+.dark #light-button {
     opacity: 0%;
-    transition: opacity 500ms;
 }
 /* ------ */
 
