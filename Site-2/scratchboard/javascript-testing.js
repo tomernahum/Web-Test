@@ -31,3 +31,7 @@ for (i of document.querySelectorAll(".hello-button")) {
     i.onclick = button_on_click
 }
 
+
+function test(){
+    x = () =>
+}
