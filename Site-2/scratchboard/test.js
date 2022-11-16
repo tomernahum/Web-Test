@@ -23,13 +23,13 @@ function testFunction(){
     return x
 }
 
-function testFunction2(){
-    const w = 55
+// function testFunction2(){
+//     const w = 55
     
-    const x = {
-        return 55
-    }
-}
+//     const x = {
+//         return 55
+//     }
+// }
 
 
 

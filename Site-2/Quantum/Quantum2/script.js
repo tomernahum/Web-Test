@@ -44,7 +44,6 @@ async function onButtonClick(e) {
     //     output(`error splitting the universe: ${error}`)
     // })
 
-    // TODO: No error catching implemented in this versionof the code
     toggleLoading(true)
     
     try {
@@ -54,7 +53,6 @@ async function onButtonClick(e) {
     catch (error) {
         output(`error splitting the universe: ${error}`)
     }
-    
     
     
     toggleLoading(false)
