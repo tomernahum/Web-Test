@@ -1,5 +1,7 @@
+"use strict"
 
-//
+import { game } from "./game.js"
+
 const form = document.querySelector("#input-form")
 
 form.addEventListener("submit", onFormSubmitted )
@@ -9,11 +11,13 @@ function onFormSubmitted(event){
     const form = event.currentTarget
     const inputBox = form.querySelector("input#x")
     
-    output(inputBox.value) 
-    inputBox.value = "";   //Question: this works, but if I store InputX.value as one variable, changing it with = just changes the variable, not the thing in the DOM that it is pointing at, so what if I wanted a pointer so to speak in one variable?
-     
+    //output(inputBox.value)
+    game(inputBox.value)
     
+    inputBox.value = "";   //Question: this works, but if I store InputX.value as one variable, changing it with = just changes the variable, not the thing in the DOM that it is pointing at, so what if I wanted a pointer so to speak in one variable?
 }
+
+
 
 
 //is this best way to structure this function?

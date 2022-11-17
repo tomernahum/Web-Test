@@ -1,11 +1,15 @@
 
+import { getCustomString } from "./test2.js"
+
 const button = document.querySelector("button")
 const output_div = document.querySelector("div")
 
 button.addEventListener('click', onButtonClick)
 
 function onButtonClick(e) {
-    output_div.textContent = testFunction()
+    //output_div.textContent = testFunction()
+    console.log("hello")
+    output_div.textContent = getCustomString()
 }
 
 

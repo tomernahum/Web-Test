@@ -92,3 +92,5 @@ function newFunction(playerScore, computerScore) {
     return { winnerOut, playerScore, computerScore }
 }
 
+
+export {game}
