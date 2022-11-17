@@ -1,94 +1,40 @@
-function getComputerChoice() {
-    const CHOICES = ["rock", "paper", "scissors"]
-    const randomInt = Math.floor(Math.random() * (3))  //random in 0-2
 
-    return CHOICES[randomInt]
+//
+const form = document.querySelector("#input-form")
+
+form.addEventListener("submit", onFormSubmitted )
+
+function onFormSubmitted(event){
+    event.preventDefault()
+    const form = event.currentTarget
+    const inputBox = form.querySelector("input#x")
+    
+    output(inputBox.value) 
+    inputBox.value = "";   //Question: this works, but if I store InputX.value as one variable, changing it with = just changes the variable, not the thing in the DOM that it is pointing at, so what if I wanted a pointer so to speak in one variable?
+     
+    
 }
 
-//pointless abstraction maybe?
-function playMatch(playerA, playerB) {
-    // Rock > Scissors  Scissors > Paper    Paper > Rock
 
-    playerA = playerA.toLowerCase().trim()
-    playerB = playerB.toLowerCase().trim()
-    const choices = ["rock", "paper", "scissors"]
-    if (!choices.includes(playerA) || !choices.includes(playerB)) {
-        throw "Invalid Input"
-    }
-    
-    
-    if (playerA === playerB)
-        return "tie"
-    
-    
-    if (playerA === "rock") {
-        if (playerB == "scissors")
-            return "player A"
-        return "player B"
-    }
-    else if (playerA === "paper"){
-        if (playerB === "rock")
-            return "player A"
-        return "player B"
-    }
-    else if (playerA === "scissors"){
-        if (playerB === "paper")
-            return "player A"
-        return "player B"
-    }
+//is this best way to structure this function?
+const outputDiv = document.querySelector("#output-area")
+function output(text){
+    outputDiv.textContent = text
 }
 
 
 
-function getPlayerChoice() {
-    return prompt("enter your choice")
-}
 
-function playRound(playerScore, computerScore){
-    
-
-}
-
-function game() {
-    let playerScore = 0
-    let computerScore = 0
-    
-    for (let index = 0; index < 3; index++) {
-        let winner;
-        ({ winner, playerScore, computerScore } = newFunction(playerScore, computerScore))
-        console.log(winner);
+function test(){
+    console.log("Test Begins")
+    const object1 = {
+        user: "alyyx",
+        nationality: "Space",
+        fuu() {
+            console.log("hello!!!")
+        }
     }
-    console.log(playerScore)
+    console.table(object1)
+    console.dir(object1)
+    console.log(object1)
 }
-
-
-function newFunction(playerScore, computerScore) {
-    const playerChoice = getPlayerChoice()
-    const computerChoice = getComputerChoice()
-
-    let winnerOut
-    let matchWinner = playMatch(playerChoice, computerChoice)
-    switch (matchWinner) {
-        case "tie":
-            winnerOut = "Tie"
-            console.log("Tie!")
-            break
-
-        case "player A":
-            console.log("Player Wins!")
-            winnerOut = "Player"
-            playerScore += 1
-            break
-
-        case "player B":
-            console.log("Computer Wins!")
-            winnerOut = "Computer"
-            computerScore += 1
-            break
-
-        default:
-            throw "winner undefined"
-    }
-    return { winnerOut, playerScore, computerScore }
-}
-

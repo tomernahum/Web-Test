@@ -5,14 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 
     <title>Rock Paper Scissors</title>
 
 </head>
 <body>
-    <div>Currently played in the console</div>
+    <form id="input-form">
+        <label for="x">Input: </label>
+        <input type="text" id="x" name="x" placeholder="Enter &quot;Rock&quot;, &quot;Paper&quot;, or &quot;scissors&quot;">
+        
+        
+        <input type="submit">
+    </form>
 
-    <script src="script.js"></script>
+    <div id="output-area">
+        Default Output
+    </div>
+
 </body>
 </html>
