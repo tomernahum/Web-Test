@@ -1,9 +1,3 @@
-function getComputerChoice() {
-    const CHOICES = ["rock", "paper", "scissors"]
-    const randomInt = Math.floor(Math.random() * (3))  //random in 0-2
-
-    return CHOICES[randomInt]
-}
 
 //OLD UNUSED CODE (you can run consoleGame() in the console)
 
@@ -39,6 +33,8 @@ function playMatch(playerA, playerB) {
         return "player B"
     }
 }
+
+
 
 
 
@@ -89,6 +85,53 @@ function playRoun(playerScore, computerScore, playerChoice, computerChoice) {
 }
 //Old code ends
 
+//----------
+
+
+function getComputerChoice() {
+    const CHOICES = ["rock", "paper", "scissors"]
+    const randomInt = Math.floor(Math.random() * (3))  //random in 0-2
+
+    return CHOICES[randomInt]
+}
+
+/*
+[scissors paper rock scissors]
+item in list beats next item in list
+
+index = list.indexof(player)
+what_it_beats = list[index + 1] ? list[0]
+
+if computer is what_player_beats, player wins
+if player is what compu
+
+rock > scissors
+scissors > paper
+paper > rock
+*/
+
+function getWinner(playerChoice, computerChoice) {
+    //might be better way of doing this    I am tired rn and I want to get this done
+    function whatChoiceBeats(choice){
+        switch (choice) {
+            case "rock":
+                return "scissors";
+            case "scissors":
+                return "paper";
+            case "paper":
+                return "rock"
+        }
+    }
+
+    if (playerChoice === computerChoice){  //tie
+        return "tie"
+    }
+    if (computerChoice === whatChoiceBeats(playerChoice)) {  //playerChoice beats computerChoice
+        return "player"
+    }
+    return "computer"  //proccess of elimination: computerChoice beats playerChoice
+
+}
 
 
 
@@ -101,19 +144,26 @@ function playRound(playerChoice) {
 
     const input_is_valid = ["rock", "paper", "scissors"].includes(playerChoice)
     if (!input_is_valid) {
-        return "oopsy"  //TODO
+        return "oopsy"  //TODO   idk what the convention might be -- exception or something like -1
     }
 
-
-    //const playerChoice = playerChoice
     const computerChoice = getComputerChoice()
 
-    const winner = "tie"
+    //calculate winner
+    const winner = getWinner(playerChoice, computerChoice)
+    
+    //change scores
+    if (winner === "player")
+        playerScore++;
+    else if (winner === "computer")
+        computerScore++;
  
     return {
         winner: winner,
         playerScore: playerScore,
         computerScore: computerScore,
+        computerChoice: computerChoice,
+        playerChoice: playerChoice,
     }
 
     //return `P: ${playerChoice}  C: ${computerChoice}`

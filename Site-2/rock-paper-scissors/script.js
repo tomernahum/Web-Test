@@ -15,9 +15,10 @@ function onFormSubmitted(event){
     //game(inputBox.value)
     
     const roundResultsObj = gameInput(inputBox.value)
-
-    output(roundResultsObj.winner)
-    console.log(roundResultsObj)
+    console.dir(roundResultsObj)
+    
+    output(`Winner: ${roundResultsObj.winner}`)
+    //TODO: theatrically display computer choice and winner
     
     inputBox.value = "";   //Question: this works, but if I store InputX.value as one variable, changing it with = just changes the variable, not the thing in the DOM that it is pointing at, so what if I wanted a pointer so to speak in one variable?
 }
