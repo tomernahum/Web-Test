@@ -1,6 +1,6 @@
 "use strict"
 
-import { game } from "./game.js"
+import { gameInput } from "./game.js"
 
 const form = document.querySelector("#input-form")
 
@@ -12,7 +12,12 @@ function onFormSubmitted(event){
     const inputBox = form.querySelector("input#x")
     
     //output(inputBox.value)
-    game(inputBox.value)
+    //game(inputBox.value)
+    
+    const roundResultsObj = gameInput(inputBox.value)
+
+    output(roundResultsObj.winner)
+    console.log(roundResultsObj)
     
     inputBox.value = "";   //Question: this works, but if I store InputX.value as one variable, changing it with = just changes the variable, not the thing in the DOM that it is pointing at, so what if I wanted a pointer so to speak in one variable?
 }

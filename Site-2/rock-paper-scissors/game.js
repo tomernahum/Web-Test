@@ -5,6 +5,8 @@ function getComputerChoice() {
     return CHOICES[randomInt]
 }
 
+//OLD UNUSED CODE (you can run consoleGame() in the console)
+
 //pointless abstraction maybe?
 function playMatch(playerA, playerB) {
     // Rock > Scissors  Scissors > Paper    Paper > Rock
@@ -44,27 +46,21 @@ function getPlayerChoice() {
     return prompt("enter your choice")
 }
 
-function playRound(playerScore, computerScore){
-    
-
-}
-
-function game() {
+function consoleGame() {
     let playerScore = 0
     let computerScore = 0
     
     for (let index = 0; index < 3; index++) {
         let winner;
-        ({ winner, playerScore, computerScore } = newFunction(playerScore, computerScore))
+        ({ winner, playerScore, computerScore } = playRoun(playerScore, computerScore, getPlayerChoice(), getComputerChoice()))
         console.log(winner);
     }
     console.log(playerScore)
 }
 
-
-function newFunction(playerScore, computerScore) {
-    const playerChoice = getPlayerChoice()
-    const computerChoice = getComputerChoice()
+function playRoun(playerScore, computerScore, playerChoice, computerChoice) {
+    // const playerChoice = getPlayerChoice()
+    //const computerChoice = getComputerChoice()
 
     let winnerOut
     let matchWinner = playMatch(playerChoice, computerChoice)
@@ -91,6 +87,38 @@ function newFunction(playerScore, computerScore) {
     }
     return { winnerOut, playerScore, computerScore }
 }
+//Old code ends
 
 
-export {game}
+
+
+//whats better, storing the scores or passing in the scores. Im gonna go with storing
+//If I were coding in python where im more comfortable i might make a game object/class or something. But for now I will just put the code near itself
+let playerScore = 0
+let computerScore = 0
+function playRound(playerChoice) {
+    playerChoice = playerChoice.toLowerCase()
+
+    const input_is_valid = ["rock", "paper", "scissors"].includes(playerChoice)
+    if (!input_is_valid) {
+        return "oopsy"  //TODO
+    }
+
+
+    //const playerChoice = playerChoice
+    const computerChoice = getComputerChoice()
+
+    const winner = "tie"
+ 
+    return {
+        winner: winner,
+        playerScore: playerScore,
+        computerScore: computerScore,
+    }
+
+    //return `P: ${playerChoice}  C: ${computerChoice}`
+
+}
+
+
+export {playRound as gameInput}
