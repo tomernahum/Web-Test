@@ -27,11 +27,11 @@ const hello_button_on_click = () => hello();
 
 
 //im sure theres a better way ill get to it. also should this be done in the html or the js?
-for (i of document.querySelectorAll(".hello-button")) {
-    i.onclick = button_on_click
+for (const i of document.querySelectorAll(".hello-button")) {
+    i.onclick = hello_button_on_click
 }
 
 
 function test(){
-    x = () =>
+    x = () => {}
 }
