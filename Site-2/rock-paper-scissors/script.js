@@ -14,14 +14,28 @@ function onFormSubmitted(event){
     //output(inputBox.value)
     //game(inputBox.value)
     
-    const roundResultsObj = gameInput(inputBox.value)
-    console.dir(roundResultsObj)
-    
-    output(`Winner: ${roundResultsObj.winner}`)
+    playRound(inputBox.value)
     //TODO: theatrically display computer choice and winner
     
     inputBox.value = "";   //Question: this works, but if I store InputX.value as one variable, changing it with = just changes the variable, not the thing in the DOM that it is pointing at, so what if I wanted a pointer so to speak in one variable?
 }
+
+async function playRound(input) {
+    const roundResultsObj = gameInput(input)
+    console.dir(roundResultsObj)
+    
+    output(`Player Plays: ${roundResultsObj.playerChoice}`)
+    await sleep(1)
+    output(`Computer Plays: ${roundResultsObj.computerChoice}`)
+    await sleep(1)
+    output(`Winner: ${roundResultsObj.winner}`)
+
+
+
+    
+    //output(`Winner: ${roundResultsObj.winner}`)
+}
+
 
 
 
@@ -47,4 +61,10 @@ function test(){
     console.table(object1)
     console.dir(object1)
     console.log(object1)
+}
+
+async function sleep(s) {
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, s*1000)
+    })
 }
