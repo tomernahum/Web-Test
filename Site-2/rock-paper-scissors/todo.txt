@@ -1,0 +1,2 @@
+- Output properly
+- Maybe make tabs for the text input vs radial menu
