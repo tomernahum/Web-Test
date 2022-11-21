@@ -29,6 +29,8 @@ async function playRound(input) {
     output(`Computer Plays: ${roundResultsObj.computerChoice}`)
     await sleep(1)
     output(`Winner: ${roundResultsObj.winner}`)
+    await sleep(1)
+    output(`Player: ${roundResultsObj.playerScore} --- Computer: ${roundResultsObj.computerScore}`)
 
 
 
