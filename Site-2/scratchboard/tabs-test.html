@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+
+    <style>
+        *{
+            font-size: larger;
+        }
+        span {
+            font-size: inherit;
+        }
+
+        body{
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 8px;
+        }
+
+        
+        
+        .tab-selectors {
+            list-style: none;
+            padding-left: 0;
+        }
+        .tab-selectors li {
+            display:inline;
+        }
+        .tab-selectors li:hover { 
+            background: rgb(241, 0, 0); 
+        }
+        :target {
+            background:pink;
+        }
+
+
+
+
+        .tab-content {
+            display:none;
+            background:gainsboro;
+            padding: 5px;
+        }
+        .tab-content.active {
+            display:block;
+            /* background:red; */
+        }
+
+
+        
+        /* Parent div of read more button can have
+        class of reading-more or not-reading-more */
+        
+        
+        #read-more-button {
+            text-decoration: underline;
+            color:blue;
+            cursor: pointer;
+        }
+        
+        .not-reading-more .read-more-content {
+            display:none;
+        }
+        .reading-more .read-more-content{
+            display:initial;
+        }
+        
+        .not-reading-more .dotdotdot{
+            display:initial;
+        }
+        .reading-more .dotdotdot{
+            display:none;
+        }
+
+    </style>
+    <script src="./tabs-test.js" defer></script>
+</head>
+<body>
+    <ul class="tab-selectors">
+        <li><a href="#tab-1">One</a></li>
+        <li><a href="#tab-2">Two</a></li>
+        <li><a href="#tab-3">Three</a></li>
+    </ul>
+    <div id="tabs-content">
+        <div class="tab-content tab-1">
+            <p>
+                Hello. This is tab 1 :)))
+            </p>  
+            <button>This button doesn't do anything</button>
+        </div>
+        <div class="tab-content tab-2">
+            <p>
+                Tab 2!!!
+            </p>
+        </div>
+        <div class="tab-content tab-3" id="tab-3">
+            <h1>TAB <u>3</u></h1>
+        </div>
+    </div>
+
+    <div id="notes" class="not-reading-more" style="font-size:large;">
+        <p style="margin-bottom:5px;">
+            <s style="font-size:inherit">Implemented in a hacky way</s>, using anchor tags to link to this page url plus #____ at the end
+            then javascript looks at url to decide what to display 
+            (there's also a way to do this with 
+            <span class="dotdotdot">...</span>
+            <span class="read-more-content">css:target which is the intended point of a linking to #___ I think) (thanks css tricks)</span>
+        </p>
+        <span class="read-more-content">
+            <p>
+                I dont remember why I did it like that actually... Maybe I didnt want it jumping around
+            </p>
+            <p>
+                But anyway its janky cause the onclick listener event for the ahrefs 
+                fires a split second before the link is updated, meaning the function used to update 
+                the tabs called updateTabsDisplay runs before the url changes, 
+                so I had to make it delay a few miliseconds. But if your on a slow browser you may need to click tabs twice.
+            </p>
+            <p>
+                So I probably wont be using this system in other places.
+                But still I learned some about CSS trying to look up how to do tags.
+                The recomended method I found for CSS-only tabs is with radio labels next to divs
+                and ~ or + operator which gets the previous/next occurence of a selector. 
+                But that doesnt work for the tabs being in their own div and the content being in its own div.
+                Is that a better way anyway? Idk probably not but its how I imagined it at the start. 
+                I also like the idea of the different tabs being linkable but also on the same page.
+            </p>
+            <p>
+                Anyway
+            </p>
+            <p>
+                However another flaw with this system is back button hijacking! 
+                I think there might be a way around that not sure but I am done for the day!
+            </p>
+            <p style="display: none;">
+                Also if it jitters when you click read more
+                 thats because its adding a scroll bar due to longer page
+            </p>
+            <p>
+                EDIT: Nevermind, you can do window.onhashchange and put the update function there.
+                Maybe this is viable who knows, probably cant stop the hijackng though.
+                So yeah this isn't that janky!
+            </p>
+            <p>
+                Theres still no highlighting of current tab though thats a problem.
+                Maybe I will figure that out. for now igtg
+            </p>
+        </span>
+
+        <a id="read-more-button" script="">
+            Read More
+        </a>
+        
+    </div>
+</body>
+</html>
