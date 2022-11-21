@@ -1,4 +1,5 @@
 //BACK BUTTON CODE
+//BUG: works wrong if user manually clicks back. TODO
 let backsNeeded = 1;
 window.addEventListener("hashchange", ()=>{
     backsNeeded++
