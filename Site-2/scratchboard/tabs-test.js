@@ -1,3 +1,5 @@
+// If you ever come back to this, look into location.hash might be more correct way to do some of this
+
 //BACK BUTTON CODE
 //BUG: works wrong if user manually clicks back. TODO
 let backsNeeded = 1;
