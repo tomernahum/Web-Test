@@ -30,12 +30,14 @@
         }
         .tab-selectors li {
             display:inline;
+            padding:10px;
         }
         .tab-selectors li:hover { 
-            background: rgb(241, 0, 0); 
+            background: lime;
         }
-        :target {
-            background:pink;
+        .tab-selectors li.active {
+            background:limegreen;
+            background:lightblue;
         }
 
 
@@ -145,10 +147,6 @@
                 EDIT: Nevermind, you can do window.onhashchange and put the update function there.
                 Maybe this is viable who knows, probably cant stop the hijackng though.
                 So yeah this isn't that janky!
-            </p>
-            <p>
-                Theres still no highlighting of current tab though thats a problem.
-                Maybe I will figure that out. for now igtg
             </p>
         </span>
 

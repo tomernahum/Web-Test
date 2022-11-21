@@ -4,6 +4,7 @@ window.addEventListener("load", updateTabsDisplay)
 window.addEventListener("hashchange", updateTabsDisplay)
 
 tabContents = document.querySelectorAll(".tab-content")  //should this be put in the function?
+tabSelectors = document.querySelectorAll(".tab-selectors li")
 function updateTabsDisplay(){
 
     //TODO: highlight current tab
@@ -11,12 +12,30 @@ function updateTabsDisplay(){
     tabContents.forEach(tabContent => {
         tabContent.classList.remove('active')
     });
+    tabSelectors.forEach(tabSelector => {
+        tabSelector.classList.remove('active')
+    })
 
     const currentTabName = window.location.href.split("#").at(-1).slice(0) // get the # thing from the url
     const activeTabContent = document.querySelector(`.${currentTabName}`) //this is how I did it for some reason
+    const activeTabSelector = (() =>{
+        for (const tabSelector of tabSelectors) {
+            const tabName = tabSelector.querySelector("a").getAttribute("href").slice(1)
+            console.log(tabName)
+            console.log(currentTabName)
+            if (tabName == currentTabName){
+                console.log("YAY")
+                return tabSelector;
+            }
+        }
+    })() //good way of doing things??  //LOOKINTO
+
     activeTabContent.classList.add('active')
+    activeTabSelector.classList.add('active')
     
-    console.log(activeTabContent)
+    console.log(activeTabSelector)
+    console.log(tabSelectors)
+    //console.log(activeTabContent)
 }
 
 /*
