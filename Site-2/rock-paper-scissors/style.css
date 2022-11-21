@@ -7,7 +7,7 @@
     
 }
 
-#input-form, #output-area {
+body > div {
     max-width: 1000px;
     margin-left:auto;
     margin-right: auto;
@@ -40,4 +40,39 @@
 #output-area{
     margin-top: 30px;
     font-size: 200%;
+}
+
+
+
+#form2-area{
+    display:flex;
+}
+#form2-output {
+    /* border: 1px solid black; */
+
+}
+#form2-seperator {
+    border: 1px solid black;
+    margin: 0px 40px;
+
+}
+
+
+hr {
+    margin:10px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#radio-form input[type=submit]{
+    margin-top:20px;
+}
+
+
+
+
+
+input[type=submit] {
+    border-radius: 10px;
+    padding: 4px 10px;
 }

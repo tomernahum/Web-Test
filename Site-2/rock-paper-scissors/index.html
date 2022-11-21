@@ -12,19 +12,45 @@
 
 </head>
 <body>
-    <form id="input-form">
-        <label for="x">Input: </label>
-        <input type="text" id="x" name="x" required
-        placeholder="Enter &quot;Rock&quot;, &quot;Paper&quot;, or &quot;Scissors&quot;">
-        <!-- May be able to further require correct form inputs with pattern attribute w/ regex if it works like that 
-        Actually theres also the constraint validation api, anyway what I have is good enough-->
-        
-        <input type="submit">
-    </form>
-
-    <div id="output-area">
-        Default Output
+    <div id="form1-area">
+        <form id="input-form">
+            <label for="x">Input: </label>
+            <input type="text" id="x" name="x" required
+            placeholder="Enter &quot;Rock&quot;, &quot;Paper&quot;, or &quot;Scissors&quot;">
+            <!-- May be able to further require correct form inputs with pattern attribute w/ regex if it works like that 
+            Actually theres also the constraint validation api, anyway what I have is good enough-->
+            
+            <input type="submit">
+        </form>
+    
+        <div id="output-area">
+            Default Output
+        </div>
     </div>
+    <hr style="display:none">
+    <div id="form2-area" style="display:none">
+        <form id="radio-form">
+            <div>
+                <input type="radio" name="rps" id="rock" value="rock">
+                <label for="rock"> Rock </label>
+            </div>
+            <div>
+                <input type="radio" name="rps" id="paper" value="paper">
+                <label for="paper"> Paper </label>
+            </div>
+            <div>
+                <input type="radio" name="rps" id="paper" value="paper">
+                <label for="scissors"> Scissors </label>
+            </div>
+            <input type="submit" value="Play">
+        </form>
+        <div id="form2-seperator">
+            
+        </div>
+        <div id="form2-output">
+        </div>
+    </div>
+    
 
 </body>
 </html>
