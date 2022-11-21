@@ -59,7 +59,7 @@
         class of reading-more or not-reading-more */
         
         
-        #read-more-button {
+        #read-more-button, #back-button {
             text-decoration: underline;
             color:blue;
             cursor: pointer;
@@ -79,10 +79,19 @@
             display:none;
         }
 
+        
+        #back-button {
+            font-size: large;
+            border: 1px solid blue;
+        }
+        
     </style>
     <script src="./tabs-test.js" defer></script>
 </head>
 <body>
+    <a id="back-button">
+        &lt Back
+    </a>
     <ul class="tab-selectors">
         <li><a href="#tab-1">One</a></li>
         <li><a href="#tab-2">Two</a></li>

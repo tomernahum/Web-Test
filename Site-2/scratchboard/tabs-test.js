@@ -1,3 +1,16 @@
+//BACK BUTTON CODE
+let backsNeeded = 1;
+window.addEventListener("hashchange", ()=>{
+    backsNeeded++
+    console.log(backsNeeded)
+})
+function goBack(){
+    console.log(0-backsNeeded)
+    window.history.go(0-backsNeeded)
+}
+document.querySelector("#back-button").addEventListener("click", goBack)
+
+
 
 //TABS CODE
 window.addEventListener("load", updateTabsDisplay)
@@ -21,10 +34,7 @@ function updateTabsDisplay(){
     const activeTabSelector = (() =>{
         for (const tabSelector of tabSelectors) {
             const tabName = tabSelector.querySelector("a").getAttribute("href").slice(1)
-            console.log(tabName)
-            console.log(currentTabName)
             if (tabName == currentTabName){
-                console.log("YAY")
                 return tabSelector;
             }
         }
@@ -33,8 +43,8 @@ function updateTabsDisplay(){
     activeTabContent.classList.add('active')
     activeTabSelector.classList.add('active')
     
-    console.log(activeTabSelector)
-    console.log(tabSelectors)
+    // console.log(activeTabSelector)
+    // console.log(tabSelectors)
     //console.log(activeTabContent)
 }
 
@@ -72,3 +82,5 @@ readMoreButton.addEventListener('click', (e)=>{   //I tried to make it extendabl
     }
 
 })
+
+
