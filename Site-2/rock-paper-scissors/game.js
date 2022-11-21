@@ -144,7 +144,8 @@ function playRound(playerChoice) {
 
     const input_is_valid = ["rock", "paper", "scissors"].includes(playerChoice)
     if (!input_is_valid) {
-        return "oopsy"  //TODO   idk what the convention might be -- exception or something like -1
+        throw new Error("Invalid Input")
+        return "oopsy"  //   idk what the convention might be -- exception or something like -1
     }
 
     const computerChoice = getComputerChoice()
@@ -164,6 +165,8 @@ function playRound(playerChoice) {
         computerScore: computerScore,
         computerChoice: computerChoice,
         playerChoice: playerChoice,
+        gameOver: false, //not yet implemented
+        gameWinner: "None",
     }
 
     //return `P: ${playerChoice}  C: ${computerChoice}`

@@ -20,25 +20,33 @@ function onFormSubmitted(event){
     inputBox.value = "";   //Question: this works, but if I store InputX.value as one variable, changing it with = just changes the variable, not the thing in the DOM that it is pointing at, so what if I wanted a pointer so to speak in one variable?
 }
 
+
+
+
 async function playRound(input) {
-    const roundResultsObj = gameInput(input)
-    console.dir(roundResultsObj)
-    
-    output(`Player Plays: ${roundResultsObj.playerChoice}`)
-    await sleep(1)
-    output(`Computer Plays: ${roundResultsObj.computerChoice}`)
-    await sleep(1)
-    output(`Winner: ${roundResultsObj.winner}`)
-    await sleep(1)
-    output(`Player: ${roundResultsObj.playerScore} --- Computer: ${roundResultsObj.computerScore}`)
-
-
-
-    
-    //output(`Winner: ${roundResultsObj.winner}`)
+    //TODO: make it not let you play multiple rounds at the same time... I guess you could have a playingRound = true/false variable
+    try {
+        const roundResultsObj = gameInput(input)
+        console.dir(roundResultsObj)
+        
+        output(`Player Plays: ${roundResultsObj.playerChoice}`)
+        await sleep(1)
+        output(`Computer Plays: ${roundResultsObj.computerChoice}`)
+        await sleep(1)
+        output(`Winner: ${roundResultsObj.winner}`)
+        await sleep(1)
+        output(`Player: ${roundResultsObj.playerScore} --- Computer: ${roundResultsObj.computerScore}`) 
+    } 
+    catch (error) {
+        if (error.message === "Invalid Input"){
+            output("Invalid Input!!!!!!!!!!!!")
+        }
+        else{
+            output(`ERROR: ${error}`)
+        }
+        return
+    }
 }
-
-
 
 
 
@@ -46,6 +54,17 @@ async function playRound(input) {
 const outputDiv = document.querySelector("#output-area")
 function output(text){
     outputDiv.textContent = text
+}
+function output_notinuse(text) {
+    outputDiv.innerHTML += `<p> ${text} </p`
+}
+
+
+
+async function sleep(s) {
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, s*1000)
+    })
 }
 
 
@@ -63,10 +82,4 @@ function test(){
     console.table(object1)
     console.dir(object1)
     console.log(object1)
-}
-
-async function sleep(s) {
-    return new Promise((resolve, reject) => {
-        setTimeout(resolve, s*1000)
-    })
 }

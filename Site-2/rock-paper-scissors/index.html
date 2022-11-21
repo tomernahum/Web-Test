@@ -14,8 +14,10 @@
 <body>
     <form id="input-form">
         <label for="x">Input: </label>
-        <input type="text" id="x" name="x" placeholder="Enter &quot;Rock&quot;, &quot;Paper&quot;, or &quot;Scissors&quot;">
-        
+        <input type="text" id="x" name="x" required
+        placeholder="Enter &quot;Rock&quot;, &quot;Paper&quot;, or &quot;Scissors&quot;">
+        <!-- May be able to further require correct form inputs with pattern attribute w/ regex if it works like that 
+        Actually theres also the constraint validation api, anyway what I have is good enough-->
         
         <input type="submit">
     </form>
