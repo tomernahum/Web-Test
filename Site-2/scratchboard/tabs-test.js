@@ -1,19 +1,19 @@
 
 //TABS CODE
-window.addEventListener("load", ()=>{
-    updateTabsDisplay()
-})
+window.addEventListener("load", updateTabsDisplay)
+window.addEventListener("hashchange", updateTabsDisplay)
 
-tabContents = document.querySelectorAll(".tab-content")
+tabContents = document.querySelectorAll(".tab-content")  //should this be put in the function?
 function updateTabsDisplay(){
-    // get the # thing from the url
-    
+
+    //TODO: highlight current tab
+
     tabContents.forEach(tabContent => {
         tabContent.classList.remove('active')
     });
 
-    const currentTabName = window.location.href.split("#").at(-1).slice(0)
-    const activeTabContent = document.querySelector(`.${currentTabName}`)
+    const currentTabName = window.location.href.split("#").at(-1).slice(0) // get the # thing from the url
+    const activeTabContent = document.querySelector(`.${currentTabName}`) //this is how I did it for some reason
     activeTabContent.classList.add('active')
     
     console.log(activeTabContent)
@@ -27,8 +27,7 @@ tabSelectors.forEach(tabSelector => {
          setTimeout(updateTabsDisplay, 5)
      })
 });
-*/
-window.addEventListener("hashchange", updateTabsDisplay)
+*/ //nvmnd this haha
 
 
 
