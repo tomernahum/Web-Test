@@ -1,9 +1,15 @@
 /* @import "../../Site-1/styles/fonts.css"; */
 
 *{
-    font-size: larger;
+    /* border: 0.5px solid purple; */
+}
+
+*{
+    font-size: 1.5rem;
     /* font-family:'Times New Roman', Times, serif; */
     font-family:Arial, Helvetica, sans-serif;
+    
+    box-sizing: border-box;
     
 }
 
@@ -18,17 +24,20 @@ input[type=submit] {
     padding: 4px 10px;
 }
 
+p {
+    margin:0;
+}
 
+/* ---- Form 1 --- */
 
-
-#input-form {
+#form1-area #input-form {
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%
 }
 
-#input-form * {
+#form1-area #input-form * {
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
@@ -36,7 +45,7 @@ input[type=submit] {
     
 }
 
-#input-form #x {
+#form1-area #input-form #x {
     flex-grow: 1;
     max-width: 100%;
     min-width: 0;
@@ -46,36 +55,83 @@ input[type=submit] {
 
 
 
-#output-area{
+#form1-area #output-area{
     margin-top: 30px;
-    font-size: 200%;
+    margin-bottom: 30px;
+    /* font-size: 200%; */
+}
+
+/* -------Seperator------- */
+hr {
+    margin:0px;
+    /* margin-top: 50px; */
+    margin-bottom: 20px;
+    border: 1px solid black;
 }
 
 
+/* --------Form 2-------- */
 
 #form2-area{
     display:flex;
-}
-#form2-output {
-    /* border: 1px solid black; */
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 10px;
+    
+    
+    /* display: grid;  */  
+    /* ^ dont feel like learning this rn*/
 
 }
-#form2-seperator {
-    border: 1px solid black;
-    margin: 0px 40px;
-
+#form2-area > *{
+    background: rgb(213, 218, 223);
+    padding: 5px 10px;
 }
 
+#form2-area #input-form {
 
-hr {
-    margin:10px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#radio-form input[type=submit]{
+#form2-area #input-form #options {
+    margin-right: 15px;
+}
+
+#form2-area #input-form input[type=submit]{
     margin-top:20px;
 }
+
+#form2-area #input-form input[type=radio]{
+    vertical-align :middle;
+}
+#form2-area #input-form label{
+    vertical-align :middle;
+}
+
+
+
+
+#form2-area #score::before {
+    padding:10px;
+    border:1px solid red;
+}
+
+#form2-area #score{
+}
+
+#form2-area #output {
+    width: 340px;
+}
+#form2-area #output #round-results > div{
+}
+
+
+
+/* Note: I begin to see why sass is good */
+
+
 
 
 

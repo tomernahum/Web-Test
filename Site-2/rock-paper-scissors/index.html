@@ -27,28 +27,63 @@
             Default Output
         </div>
     </div>
-    <hr style="display:none">
-    <div id="form2-area" style="display:none">
-        <form id="radio-form">
-            <div>
-                <input type="radio" name="rps" id="rock" value="rock">
-                <label for="rock"> Rock </label>
-            </div>
-            <div>
-                <input type="radio" name="rps" id="paper" value="paper">
-                <label for="paper"> Paper </label>
-            </div>
-            <div>
-                <input type="radio" name="rps" id="paper" value="paper">
-                <label for="scissors"> Scissors </label>
+
+
+    <hr style="display:none;">
+
+    <div id="form2-area" style="display:none;">
+        <form id="input-form">
+            <div id="options">
+                <div>
+                    <input type="radio" name="rps" id="rock" value="rock">
+                    <label for="rock"> Rock </label>
+                </div>
+                <div>
+                    <input type="radio" name="rps" id="paper" value="paper">
+                    <label for="paper"> Paper </label>
+                </div>
+                <div>
+                    <input type="radio" name="rps" id="paper" value="paper">
+                    <label for="scissors"> Scissors </label>
+                </div>
             </div>
             <input type="submit" value="Play">
         </form>
-        <div id="form2-seperator">
-            
+        
+        <!-- <div id="seperator"></div> -->
+        
+        <div id="score">
+            <p>
+                Player: 
+                <span>1</span>
+            </p>
+            <p>
+                Computer: 
+                <span>1</span>
+            </p>
         </div>
-        <div id="form2-output">
+
+        <div id="output">
+            <div id="round-results">
+                <div>
+                    <span>Player: </span>
+                    <span>Rock</span>
+                </div>
+                <div>
+                    <span>Computer: </span>
+                    <span>Scissors</span>
+                </div>
+                <div>
+                    <span>Winner: </span>
+                    <span>Computer</span>
+                </div>
+            </div>
+
+            <div #game-end style="display:none">
+                Computer Wins!!
+            </div>
         </div>
+        <!-- Todo: more descriptive tags -->
     </div>
     
 
