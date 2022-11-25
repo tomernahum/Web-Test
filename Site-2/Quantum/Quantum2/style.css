@@ -13,6 +13,10 @@ body {
 
 /* Start */
 
+p {
+    margin:0;
+}
+
 
 :root {
     --max-width: 800px;
@@ -111,24 +115,25 @@ body, .main-button-container{
     
 }
 
-
-
-.main-button-container {
+.button-and-slider-container {
     position: sticky;
     top: 0px;
     padding-top: 10px;
     background-color: var(--background-color);
+}
+
+
+.main-button-container {
+    /* position: sticky;
+    top: 0px;
+    padding-top: 10px;
+    background-color: var(--background-color); */
 
     
     display: flex;
     justify-content: space-around;
     align-items: center;
     /* flex-wrap: wrap; */
-
-    /* border: 1px solid purple; */
-
-
-    
 }
 .main-button {
     width: 100%;
@@ -144,8 +149,16 @@ body, .main-button-container{
 
 
     align-self: flex-start;
+    
+    /* display: flex; */
 
 }
+
+/* TODO: make button text shrink 
+or become "Split"
+if screen width is too small 
+instead of taking up 2 lines*/
+
 .loading-image-container {
 
     /* height: calc(var(--size) * 2); */
@@ -162,6 +175,39 @@ body, .main-button-container{
     height: 100%;
 }
 
+.slider-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    /* gap: 20px;  */
+    /* ^TODO
+    Gap+ width:100% on loading bar 
+    lines it up with above button & spinner
+    using grid or another method may be
+    more propper
+    */
+}
+.slider-container input[type="range"]{
+    min-width: 25%;
+    width: 100%;
+    flex-shrink: 2;
+}
+.slider-container p {
+    color: var(--text-color);
+    transition: color 600ms;
+
+    flex-shrink: 0;
+    /* width: 200px; */
+    
+    width: var(--size);
+    margin-left: 8px;
+    text-align: center;
+}
+.slider-container #num-universes-display {
+    /* width: 200px; */
+    /* margin-left:auto; */
+}
+
 
 
 .output-area li{
@@ -173,5 +219,6 @@ body, .main-button-container{
     color: var(--text-color);
     transition: color 600ms;
 }
+
 
 

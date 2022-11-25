@@ -1,4 +1,6 @@
 To Do List:
+- Make button not wrap to 2 lines of text when viewport width is small
+
 - Color the button and button highlight
 - Style the theme switching button
 - Add Name and context of universe splitter app / theory
