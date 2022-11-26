@@ -1,6 +1,6 @@
+"use strict"
 
-
-
+//TODO: organize this stuff better
 const body = document.querySelector("body")
 const themeButton = document.querySelector("#theme-toggle")
 
@@ -9,15 +9,20 @@ const outputArea = mainDiv.querySelector(".output-area")
 const mainButton = mainDiv.querySelector(".main-button")
 const loadingImg = mainDiv.querySelector(".loading-image")
 
+const slider = mainDiv.querySelector(".slider-container .slider")
+const sliderDisplay = mainDiv.querySelector(".slider-container .num-universes-display")
+
 window.onload = () => {
 //     const mainDiv = document.querySelector("#main-div")
 //     const outputArea = mainDiv.querySelector(".output-area")
 //     const mainButton = mainDiv.querySelector(".main-button")
     mainButton.addEventListener("click", onButtonClick)
     themeButton.addEventListener("click", onThemeButtonClick)
+    slider.addEventListener("input", onSliderChange)
+
 }
 
-//
+//---- Main button and output ----
 function output(s)  {
     //alert(s)
     //outputArea.innerText = s
@@ -28,6 +33,15 @@ function output(s)  {
     element.innerText = s
     outputArea.appendChild(element)
 
+}
+
+function toggleLoading(on) {
+    if (on) {
+        loadingImg.style.display = "block"
+    }
+    else {
+        loadingImg.style.display = "none"
+    }
 }
 
 
@@ -59,18 +73,38 @@ async function onButtonClick(e) {
     
     
 }
+//
 
-function toggleLoading(on) {
-    if (on) {
-        loadingImg.style.display = "block"
-    }
-    else {
-        loadingImg.style.display = "none"
-    }
+// ---- Slider ----
+// TODO: pick which way is better
+function onSliderChange(e){
+    const slider = e.currentTarget
+    const value = slider.value
+    
+    // console.log(value)
+    sliderDisplay.innerText = value;
+    
 }
-//
+
+// alternate organization (probably better)
+const slider2 = mainDiv.querySelector(".slider-container .slider")
+const sliderDisplay2 = mainDiv.querySelector(".slider-container .num-universes-display")
+
+sliderDisplay2.innerText = slider2.value;
+
+
+slider2.addEventListener("input", (e)=> {
+    const slider = e.currentTarget
+    const value = slider2.value
+    
+    // console.log(value)
+    sliderDisplay2.innerText = value;
+})
 
 //
+
+
+//  --- Theme Button ----
 function onThemeButtonClick(){
     toggleTheme()
 }
@@ -99,7 +133,7 @@ logToDoList()
 //
 
 
-
+// -- Splitting Universe Functions ---
 function splitUniverseFake() {
     return Math.floor((Math.random() * 2)) + 1;
 }
