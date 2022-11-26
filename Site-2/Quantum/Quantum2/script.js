@@ -20,6 +20,7 @@ window.onload = () => {
     themeButton.addEventListener("click", onThemeButtonClick)
     slider.addEventListener("input", onSliderChange)
 
+    window.numUniverses = slider.value
 }
 
 //---- Main button and output ----
@@ -62,7 +63,8 @@ async function onButtonClick(e) {
     
     try {
         const universeNumber = await splitUniverseANUOldApi()
-        output(`You are in Universe ${universeNumber}`)
+        // output(`You are in Universe ${universeNumber}`)
+        output(`You are in Universe ${universeNumber}/${window.numUniverses}`)
     }
     catch (error) {
         output(`error splitting the universe: ${error}`)
@@ -83,6 +85,9 @@ function onSliderChange(e){
     
     // console.log(value)
     sliderDisplay.innerText = value;
+
+    window.numUniverses = value;
+    console.log(window.numUniverses)
     
 }
 
@@ -135,7 +140,7 @@ logToDoList()
 
 // -- Splitting Universe Functions ---
 function splitUniverseFake() {
-    return Math.floor((Math.random() * 2)) + 1;
+    return Math.floor((Math.random() * window.numUniverses)) + 1;
 }
 
 async function splitUniverseANUOldApi() {  //its called old cause there gonna deprecate the api and start charging for it
@@ -161,7 +166,7 @@ async function splitUniverseANUOldApi() {  //its called old cause there gonna de
     const getUniverseNumberPromise = new Promise((resolve, reject) => {
         fetchAnuJsonPromise.then( data => {
             const number = data.data[0]
-            const universeNumber = (number % 2) + 1
+            const universeNumber = (number % window.numUniverses) + 1
             resolve(universeNumber)
             //reject("testting")
         })
