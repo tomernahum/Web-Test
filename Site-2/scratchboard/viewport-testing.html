@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale">
+    <title>Responsive design</title>
+
+    <style>
+        /* Following Responsive design tutorial form internetingishard.com */
+        
+        /* 
+        Format:
+        @media (at-rule) (conditional-statement) {
+            css rules to apply if condition is met
+        }
+
+        at-rules:
+        only screen :  applies only to devices with screens (eg not printers)
+        */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            /* padding:20px;    */
+        }
+
+        .page {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .section {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu {
+            background-color: #5995DA;
+            height: 80px;
+        }
+
+        .header {
+            background-color: #B2D6FF;
+        }
+
+        .content {
+            background-color: #EAEDF0;
+            height: 600px;
+        }
+
+        .sign-up {
+            background-color: #D6E9FE;
+        }
+
+        .feature-1 {
+            background-color: #F5CF8E;
+        }
+
+        .feature-2 {
+            background-color: #F09A9D;
+        }
+
+        .feature-3 {
+            background-color: #C8C6FA;
+        }
+
+        /* Mobile Styles */
+        @media only screen and (max-width: 400px) {
+            body {
+                background-color: #F09A9D;
+                /* Red */
+            }
+        }
+
+        /* Tablet Styles */
+        @media only screen and (min-width: 401px) and (max-width: 960px) {
+            body {
+                background-color: #F5CF8E;
+                /* Yellow */
+            }
+            
+            .sign-up,
+            .feature-1,
+            .feature-2,
+            .feature-3 {
+                width: 50%;
+                color:red;
+            }
+        }
+
+        /* Desktop Styles */
+        @media only screen and (min-width: 961px) {
+            body {
+                background-color: #B2D6FF;
+                /* Blue */
+            }
+        }
+
+
+        
+        
+
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class='page'>
+        <div class='section menu'></div>
+        <div class='section header'>
+            <img src='./responsive-tutorial-images/header.svg' />
+            <!-- <p> Header</p> -->
+        </div>
+        <div class='section content'>
+            <img src='./responsive-tutorial-images/content.svg' />
+            <!-- <p> Content </p> -->
+        </div>
+        <div class='section sign-up'>
+            <img src='./responsive-tutorial-images/sign-up.svg' />
+        </div>
+        <div class='section feature-1'>
+            <img src='./responsive-tutorial-images/feature.svg' />
+            <!-- <p> F1 </p> -->
+        </div>
+        <div class='section feature-2'>
+            <img src='./responsive-tutorial-images/feature.svg' />
+        </div>
+        <div class='section feature-3'>
+            <img src='./responsive-tutorial-images/feature.svg' />
+        </div>
+    </div>
+    <div style="margin-top:500px;">
+
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap;">
+        <div style="width:50%; background: blue">
+            A
+        </div>
+        <div div style="width:50%; background: red">
+            B
+        </div>
+        <div style="width:100%; background-color: yellow;">
+            C
+        </div>
+    </div>
+
+</body>
+
+</html>
