@@ -1,5 +1,6 @@
 To Do List:
 - Make button not wrap to 2 lines of text when viewport width is small
+- change html tags for better accessability // maybe SEO
 
 - Color the button and button highlight
 - Style the theme switching button

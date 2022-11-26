@@ -176,7 +176,7 @@ instead of taking up 2 lines*/
 }
 
 .slider-container {
-    margin-top: 20px;
+    margin-top: 5px;
     display: flex;
     align-items: center;
     /* gap: 20px;  */
