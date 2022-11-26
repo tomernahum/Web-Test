@@ -70,9 +70,9 @@ p {
 /* ------ */
 
 
-body, .main-button-container{
+body{
     background-color: var(--background-color);
-    transition: background-color 500ms;
+    transition: background-color var(--background-transition-speed);
 }
 
 * {
@@ -120,6 +120,7 @@ body, .main-button-container{
     top: 0px;
     padding-top: 10px;
     background-color: var(--background-color);
+    transition: background-color var(--background-transition-speed);
 }
 
 
@@ -152,6 +153,16 @@ body, .main-button-container{
     
     /* display: flex; */
 
+}
+/* Replace Split universe text with split text if screen is small  so that button doesn't take two lines. 
+Not sure if this is best approach or not*/
+@media only screen and (max-width: 324px) {
+    .main-button p {
+        display:none;
+    }
+    .main-button::after {
+        content: "Split";
+    }
 }
 
 /* TODO: make button text shrink 
