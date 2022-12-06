@@ -1,3 +1,6 @@
 Todo / to learn:
-- Properly learn responsive design & principals of that besides flexbox (and learn flexbox better)
-    - specifically for landing page project the image should actually wrap (theres a flex wrap but all that happens is the image shrinks)
+- Learn Grid and any other CSS+responsive design missing pieces
+
+- specifically for landing page project the image should actually wrap (theres a flex wrap but all that happens is the image shrinks)
+
+- highlight (bold) some entries in the index for people to go there first (eg universe splitter)
