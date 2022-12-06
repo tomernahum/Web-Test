@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Practice</title>
+
+    <style>
+        body {
+            background: rgb(2, 2, 39);
+            padding-top: 10px;
+        }
+        * {
+            color: white;
+            font-size: larger;
+            box-sizing: border-box;
+        }
+        body > div{
+            width: 100%;
+        }
+        input[type=text], textarea, select, option{
+            color: black;
+            width: 100%
+
+        }
+        select{
+            width: 100%;
+            font-size: large;
+        }
+
+    </style>
+</head>
+<body> 
+    <div id="input">
+        <textarea name="textBox" id="textBox" cols="1" rows="1"></textarea>
+        <select name="selectFunctionDropdown" id="selectFunctionDropdown">
+        </select>
+    </div>
+    <br>
+    <div id="output">
+        Hello
+    </div>
+    
+    <script>
+        "use strict"
+
+        let div = document.querySelector("#output")
+        function output(text){
+            div.innerText = text;
+        }
+        
+
+        let inputBox = document.querySelector("#textBox")
+        function addInputEvent(func){
+            inputBox.addEventListener("input", (e)=>{
+                func(e.currentTarget.value)
+            })
+            func(inputBox.value)
+        }
+        function clearInputEvents(){
+            //stack overflow says this is the best way...
+            const clone = inputBox.cloneNode(true)
+            inputBox.parentNode.replaceChild(clone, inputBox)
+            inputBox = clone
+        }
+
+
+
+        //Good?
+            // const getInput = (function setupInput(){
+            //     let input = ""
+            //     document.querySelector("#textBox").addEventListener("change", (e)=>{
+            //         input = e.currentTarget.value
+            //     })
+            //     function getInput(){
+            //         return input
+            //     }
+            //     return getInput
+            // })()
+        
+    </script>
+
+    <script>
+        //should I make this an object?
+        const getId = (function setupIds(){
+            let id = 0
+            function getId(){
+                id++
+                return id - 1
+            }
+            return getId
+        })()
+        
+        functionsDropdown = document.querySelector("#selectFunctionDropdown")  //might make it generate its own
+        functionIds = {
+        }
+        function registerFunctionOption(displayText, func){
+            const id = getId()
+
+            functionIds[id] = func
+
+            //add to dropdown in DOM
+            const option = document.createElement("option")
+            option.value = id
+            option.textContent = displayText
+            functionsDropdown.appendChild(option)
+            onDropdownChange()
+        }
+        functionsDropdown.addEventListener("change", onDropdownChange)
+        function onDropdownChange(e) {
+            let selectedId = functionsDropdown.value
+            let selectedFunction = functionIds[selectedId]
+            // console.log(selectedFunction)
+            clearInputEvents()
+            addInputEvent(selectedFunction)
+        }
+
+        registerFunctionOption("echo", output)
+
+        
+    </script>
+
+    <script>
+        function adventdaythree(input){
+            console.log(input)
+            output(input)
+        }
+        registerFunctionOption("advent day 3", adventdaythree)
+
+        registerFunctionOption("testttt", (input) => {
+            const test = function(inputt){
+                output("OMGGGG")
+                return `${inputt} yay`
+            }(input)
+            output(test)
+        })
+    </script>
+
+</body>
+</html>
