@@ -3,7 +3,6 @@
 let div = document.querySelector("#output") //could make these more of a module
 function output(text){
     div.innerText = text;
-    console.log(text)
 }
 
 
@@ -114,7 +113,7 @@ dropdownn.registerFunctionOption("echo", output)
 
 
 const registerFunctionOption = dropdown.registerFunctionOption
-export {registerFunctionOption}
+export {registerFunctionOption, output}
 
 
 

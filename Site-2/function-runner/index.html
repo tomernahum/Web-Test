@@ -8,9 +8,9 @@
     <title>Function runner</title>
 
     <style>
+        /* Todo: use flexbox maybe*/
         body {
             background: rgb(2, 2, 39);
-            padding-top: 10px;
         }
         * {
             color: white;
@@ -19,7 +19,7 @@
         }
         body > div{
             width: 100%;
-            max-width: 500px;
+            max-width: 750px;
             margin: 0 auto;
         }
         input[type=text], textarea, select, option{
@@ -31,14 +31,28 @@
             width: 100%;
             font-size: large;
         }
+
+
+        #textBox {
+            height: 150px;
+            height: 30vh;
+        }
+        #output {
+            height: 50vh;
+            overflow-y: auto;
+        }
     </style>
 
     <script src="./framework.js" type="module" defer></script>
     <script src="./functions1.js" type="module" defer></script>
 </head>
 <body>
+    <div>
+        <h1>Function Runner</h1>
+    </div>
     <div id="input">
         <textarea name="textBox" id="textBox" cols="1" rows="1"></textarea>
+        <!-- todo: figure out way to make it auto get longer when you make new line, that should be a property imo -->
         <select name="selectFunctionDropdown" id="selectFunctionDropdown">
         </select>
     </div>
