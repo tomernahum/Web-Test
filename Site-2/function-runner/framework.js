@@ -9,11 +9,16 @@ function output(text){
 let activeEventFunctions = []
 let inputBox = document.querySelector("#textBox")
 function addInputEvent(func){
-    const functionToRun = () => {output(func(inputBox.value))}
+    const functionToRun = () => {
+        output(func(inputBox.value))
+        console.log(func(inputBox.value))
+        console.log(`${func}`)
+    }
 
     inputBox.addEventListener("input", functionToRun)
     activeEventFunctions.push(functionToRun)
     functionToRun()
+    console.trace("hello")
 }
 function clearInputEvents(){
     for (const activeFunc of activeEventFunctions) {
@@ -56,26 +61,32 @@ const dropdownConstructor = function(dropdownDomElement) {
         const selectedFunction = functionIds[id]
         clearInputEvents()
         addInputEvent(selectedFunction)
+        console.log("hellobii")
+        console.log(`${selectedFunction}   ${id}`)
     }
 
     function registerFunctionOption(displayText, func){
         const id = getId()
-    
-        functionIds[id] = func
 
-        console.log(`registered function option: ${id} ${displayText} `)
+        functionIds[id] = func
     
         //add to dropdown in DOM
         const option = document.createElement("option")
         option.value = id
         option.textContent = displayText
         dropdownDomElement.appendChild(option)
-        updateBasedOnDropdownSelection()
         
         //If its the same function the user had before they reloaded page then select it (id is not random)
         if (id == sessionStorage.getItem("lastSelectionId")) {
             option.selected = true;
         }
+        
+        //proccess the function once without text being changed
+        updateBasedOnDropdownSelection()
+        
+        
+        console.log(`registered function option: ${id} ${displayText} `)
+        
     }
 
     
@@ -83,6 +94,8 @@ const dropdownConstructor = function(dropdownDomElement) {
         functionIds: functionIds, //maybe should keep private?
         dropdownDomElement,       //^
         registerFunctionOption, 
+
+        updateBasedOnDropdownSelection
     }
 }
 const dropdown = dropdownConstructor(document.querySelector("#selectFunctionDropdown"))
@@ -130,7 +143,8 @@ dropdownn.registerFunctionOption("echo", output)
 
 
 const registerFunctionOption = dropdown.registerFunctionOption
-export {registerFunctionOption, output}
+const temp = dropdown.updateBasedOnDropdownSelection
+export {registerFunctionOption, output   ,temp}
 
 
 
