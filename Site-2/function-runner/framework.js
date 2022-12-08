@@ -16,11 +16,9 @@ function addInputEvent(func){
     functionToRun()
 }
 function clearInputEvents(){
-    console.log(inputBox)
     for (const activeFunc of activeEventFunctions) {
         inputBox.removeEventListener("input", activeFunc)
     }
-    console.log(inputBox);
 
     
     /* Old way //stack overflow says this is the best way...  but it does clear any text saved.
@@ -65,7 +63,7 @@ const dropdownConstructor = function(dropdownDomElement) {
     
         functionIds[id] = func
 
-        console.log(`registered function option: ${displayText} ${id}`)
+        console.log(`registered function option: ${id} ${displayText} `)
     
         //add to dropdown in DOM
         const option = document.createElement("option")
