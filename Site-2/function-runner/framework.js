@@ -11,14 +11,11 @@ let inputBox = document.querySelector("#textBox")
 function addInputEvent(func){
     const functionToRun = () => {
         output(func(inputBox.value))
-        console.log(func(inputBox.value))
-        console.log(`${func}`)
     }
 
     inputBox.addEventListener("input", functionToRun)
     activeEventFunctions.push(functionToRun)
     functionToRun()
-    console.trace("hello")
 }
 function clearInputEvents(){
     for (const activeFunc of activeEventFunctions) {
@@ -61,8 +58,6 @@ const dropdownConstructor = function(dropdownDomElement) {
         const selectedFunction = functionIds[id]
         clearInputEvents()
         addInputEvent(selectedFunction)
-        console.log("hellobii")
-        console.log(`${selectedFunction}   ${id}`)
     }
 
     function registerFunctionOption(displayText, func){
@@ -84,7 +79,7 @@ const dropdownConstructor = function(dropdownDomElement) {
         //proccess the function once without text being changed
         updateBasedOnDropdownSelection()
         
-        
+
         console.log(`registered function option: ${id} ${displayText} `)
         
     }
