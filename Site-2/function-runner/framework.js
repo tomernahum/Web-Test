@@ -6,24 +6,29 @@ function output(text){
 }
 
 
+let activeEventFunctions = []
 let inputBox = document.querySelector("#textBox")
 function addInputEvent(func){
-    inputBox.addEventListener("input", (e)=>{
-        output(func(e.currentTarget.value))
-    })
-    output(func(inputBox.value))
+    const functionToRun = () => {output(func(inputBox.value))}
+
+    inputBox.addEventListener("input", functionToRun)
+    activeEventFunctions.push(functionToRun)
+    functionToRun()
 }
 function clearInputEvents(){
-    //stack overflow says this is the best way...
+    console.log(inputBox)
+    for (const activeFunc of activeEventFunctions) {
+        inputBox.removeEventListener("input", activeFunc)
+    }
+    console.log(inputBox);
+
+    
+    /* Old way //stack overflow says this is the best way...  but it does clear any text saved.
     const clone = inputBox.cloneNode(true)
     inputBox.parentNode.replaceChild(clone, inputBox)
     inputBox = clone
+    */
 }
-
-
-
-
-
 
 //should I make this section an object/class? Edit: I did
 //class/module/iife idk   idk whats the best way. some people online say classes are evil, they probably use modules though maybe? idk. I will learn in time
@@ -53,7 +58,7 @@ const dropdownConstructor = function(dropdownDomElement) {
     
         functionIds[id] = func
 
-        console.log({displayText, func, id})
+        console.log(`registered function option: ${displayText} ${id}`)
     
         //add to dropdown in DOM
         const option = document.createElement("option")
@@ -63,6 +68,7 @@ const dropdownConstructor = function(dropdownDomElement) {
         onDropdownChange()
     }
 
+    // onDropdownChange()
     return {
         functionIds: functionIds, //maybe should keep private?
         dropdownDomElement,       //^
@@ -109,6 +115,7 @@ const dropdownn = dropdownConstructor(document.querySelector("#selectFunctionDro
 output("hellooooo")
 dropdownn.registerFunctionOption("echo", output)
 */
+
 
 
 

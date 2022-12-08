@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Function runner</title>
+    <title>
+        Function runner // Advent of code 2022 solver
+    </title>
 
     <style>
         /* Todo: use flexbox maybe*/
@@ -17,7 +19,7 @@
             font-size: larger;
             box-sizing: border-box;
         }
-        body > div{
+        body > *{
             width: 100%;
             max-width: 750px;
             margin: 0 auto;
@@ -34,12 +36,13 @@
 
 
         #textBox {
-            height: 150px;
+            /* height: 150px; */
             height: 30vh;
         }
         #output {
             height: 50vh;
             overflow-y: auto;
+            display:block;
         }
     </style>
 
@@ -57,8 +60,8 @@
         </select>
     </div>
     <br>
-    <div id="output">
-        Hello
-    </div>
+    <output id="output">
+        
+    </output>
 </body>
 </html>
