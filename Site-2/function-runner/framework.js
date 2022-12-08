@@ -46,9 +46,16 @@ const dropdownConstructor = function(dropdownDomElement) {
     const functionIds = {
         "-1": console.log,  //example
     }
+
     dropdownDomElement.addEventListener("change", onDropdownChange)
     function onDropdownChange(e) {
-        let selectedFunction = functionIds[dropdownDomElement.value]
+        updateBasedOnDropdownSelection()
+
+        sessionStorage.setItem("lastSelectionId", dropdownDomElement.value) //todo (not really though): make this support multiple selections if you want to have multiple dropdowns so its like a class
+    }
+    function updateBasedOnDropdownSelection(){
+        const id = dropdownDomElement.value
+        const selectedFunction = functionIds[id]
         clearInputEvents()
         addInputEvent(selectedFunction)
     }
@@ -65,10 +72,15 @@ const dropdownConstructor = function(dropdownDomElement) {
         option.value = id
         option.textContent = displayText
         dropdownDomElement.appendChild(option)
-        onDropdownChange()
+        updateBasedOnDropdownSelection()
+        
+        //If its the same function the user had before they reloaded page then select it (id is not random)
+        if (id == sessionStorage.getItem("lastSelectionId")) {
+            option.selected = true;
+        }
     }
 
-    // onDropdownChange()
+    
     return {
         functionIds: functionIds, //maybe should keep private?
         dropdownDomElement,       //^
