@@ -1,0 +1,5 @@
+Idea:
+    next to the textbox, put a place to put profiles of input text (so you can switch between example and real input for example)
+
+- allow displaying array and object
+
