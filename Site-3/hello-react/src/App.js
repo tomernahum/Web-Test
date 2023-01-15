@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import HelloComponent from './HelloComponent';
+import HelloComponentAlt from './HelloComponentAlt';
 
 function App() {
   return (
@@ -19,21 +21,19 @@ function App() {
         </a>
       </header>
 
-      <TestComponent>
+      <HelloComponent
+        greetee="badguy"
+        test="not used"
+      />
 
-      </TestComponent>
+      <HelloComponentAlt 
+        greetee="World"
+      />
     </div>
+
   );
 }
 
 
-function TestComponent()
-{
-  return (
-    <h1>
-      Hello World!
-    </h1>
-  );
-}
 
 export default App;
