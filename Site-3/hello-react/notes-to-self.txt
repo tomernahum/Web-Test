@@ -12,3 +12,8 @@
 
 - You can import CSS files into js thanks to webpack (not vanilla js feature)
 
+
+
+TODO:
+- figure out github actions for building
+- Do fullstackopen hw/quizes
