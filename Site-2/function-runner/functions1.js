@@ -116,3 +116,30 @@ function adventDayThreeP2 (input) {
     
 }
 
+registerFunctionOption("Advent Day Four P1", adventD4P1)  
+/**
+ * @param {String} input 
+ * @return {String}
+ */
+function adventD4P1 (input) {
+    console.group("AdventD4P")
+    
+    input = input.trim()
+    const lines = input.split("\n")
+    
+    return lines[1]
+}
+
+registerFunctionOption("Advent Day 10 P1", adventD10P1)  
+/**
+ * @param {String} input 
+ * @return {String}
+ */
+function adventD10P1 (input) {
+    console.group("AdventD4P")
+    
+    input = input.trim()
+    const lines = input.split("\n")
+    
+    return lines[1]
+}
