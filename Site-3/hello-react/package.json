@@ -1,5 +1,7 @@
 {
-  "homepage" : ".",
+  "homepage" : ".", 
+  "//Comment:": "^ above line makes it compile to static file, which can be opened normally or deploy to pages directly. I don't 100% understand the significance but sort of do (normally you might put the url it will be deployed on, this makes it relative, but I think it makes html pushState api // proper url routing not work. The official github pages deployment guide says to use an npm library gh-pages to deploy to pages, havn't tried that yet at time of writing",
+
   "name": "hello-react",
   "version": "0.1.0",
   "private": true,
