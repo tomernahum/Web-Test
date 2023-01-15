@@ -1,0 +1,14 @@
+
+
+(Might be holes in knowledge)
+
+- Files in public folder are copy and pasted directly by webpack when building (minified though I think)
+- Files in src are compiled
+- 
+
+- Files in public are considered static and in src (dynamic?),;
+  though its both js which could be deployed to a static hosting provider
+
+
+- You can import CSS files into js thanks to webpack (not vanilla js feature)
+
