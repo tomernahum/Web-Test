@@ -43,14 +43,23 @@
                 outputArea.style.fontSize = "50px"
             mainDiv.appendChild(outputArea)
             
+            mainDiv.append("made by tomer") //who said you need a framework for syncing your data and your DOM? //how is this data -future me
+            
+            const footernote = document.createElement("div")
+            footernote.style.cssText = "position:fixed; bottom:0; left:0"
+            footernote.innerHTML = "<a href=http://www.cheapuniverses.com/> Inspiration \
+                                    </a>, <a href=https://qrng.anu.edu.au/contact/api-documentation/>API</a>"
+            mainDiv.append(footernote)
+        
+            
             return mainDiv
         }
         
         
 
         
-        //main
-        const mainDiv = getMainDiv()
+        //main 
+        const mainDiv = getMainDiv() //defined above
         const outputArea = mainDiv.querySelector("#output-area")
         const mainButton = mainDiv.querySelector(".main-button")
         
@@ -58,7 +67,6 @@
 
         window.onload = () => {
             document.body.appendChild(mainDiv)
-            mainDiv.append("made by tomer") //who said you need a framework for syncing your data and your DOM?
         }
 
 
