@@ -17,3 +17,13 @@
 TODO:
 - figure out github actions for building
 - Do fullstackopen hw/quizes
+
+TO Learn / review (non react):
+- list all differences btwn arrow functions and regular functions,
+with an emphasis on how exporting them works (are they different while exporting, why do you need default for normal function)
+- Use of && and || logical opperators 
+- Spread operator  (for copying objects,  arrays, any other usage)
+
+
+- Dev opinions on iifes in react
+

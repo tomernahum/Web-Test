@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import HelloComponent from './HelloComponent';
 import HelloComponentAlt from './HelloComponentAlt';
+import CounterComponent from './counterComponent';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
       <HelloComponentAlt 
         greetee="World"
       />
+
+      
+      <CounterComponent/>
     </div>
 
   );
