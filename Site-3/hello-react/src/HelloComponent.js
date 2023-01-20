@@ -59,9 +59,7 @@ export default function HelloComponent({greetee})
                 }
             </div>
 
-            <div>
-                ------------------
-            </div>
+            
         </div>
     );
 }

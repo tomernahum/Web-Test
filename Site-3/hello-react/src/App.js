@@ -3,6 +3,7 @@ import './App.css';
 import HelloComponent from './HelloComponent';
 import HelloComponentAlt from './HelloComponentAlt';
 import CounterComponent from './counterComponent';
+import TestComponent from './testComponent';
 
 function App() {
   return (
@@ -26,6 +27,11 @@ function App() {
         greetee="badguy"
         test="not used"
       />
+      
+      <TestComponent></TestComponent>
+   
+   
+      <div> ----------------------------------------- </div>
 
       <HelloComponentAlt 
         greetee="World"
@@ -33,6 +39,8 @@ function App() {
 
       
       <CounterComponent/>
+
+      <div style={{marginTop:"500px"}}/>
     </div>
 
   );

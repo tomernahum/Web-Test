@@ -9,9 +9,9 @@ function CounterComponent() {
     return (
         <button 
             onClick={handleClick}
-            // style=
+            style={{width:"200px", height:"50px"}}
         >
-            Times Pressed: {count}
+           Times Pressed: {count}
         </button>
     )
 }
