@@ -13,6 +13,9 @@ function TodoForm({addTask}) {
         // could use OOP. Ie task class, contructor that makes the id itself. 
         // or could start with createTask(todoText) function, same thing really.
         // Maybe typescript has templates for this kind of thing
+        //ALTERNATIVELY: should this be in the parent function thats passed in 
+        //and the parent function just gets called with todotext and generates id and the object itself 
+        //so its not as dispersed?
         addTask({
             text: todoText,
             isCompleted: false,
