@@ -1,0 +1,11 @@
+.TodoList {
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.TodoList ul {
+    list-style-position: inside;
+    padding-right: 10px; /* TODO better than this*/
+}
