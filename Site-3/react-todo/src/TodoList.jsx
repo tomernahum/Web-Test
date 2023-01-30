@@ -14,7 +14,7 @@ function TodoForm({addTask}) {
         // or could start with createTask(todoText) function, same thing really.
         // Maybe typescript has templates for this kind of thing
         addTask({
-            todoText,
+            text: todoText,
             isCompleted: false,
             id: generateId()
         })
@@ -32,12 +32,32 @@ function TodoForm({addTask}) {
     )
 }
 
+function TodoItemList({items}){
 
-function TodoList() {
+    const test = ["Item 1", "Item 2", "Item 3"]
+
+    const listItems = items.map(todoItem=> <li key={todoItem.id}>{todoItem.text}</li>)
+    return (
+        <ul>
+            {[listItems]}
+        </ul>
+    )
+
+    {items.length!==0 && <> <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li> </>}
+}
+
+
+export default function TodoList() {
 
     const [tasksList, setTasksList] = useState([])
+    
     function addTask(task){
-        console.log(task)
+        setTasksList(prev=>[...prev, task])
+        console.log(tasksList) //state doesnt update immediatly thats how react works, would need to use useeffect to listen for state change.
     }
 
     
@@ -49,15 +69,39 @@ function TodoList() {
                 addTask={addTask}
             />
             
-            <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-                <li>Item 4</li>
-                <li>Item 5</li>
-            </ul>
+            <p>Items: {tasksList.length}</p>
+            
+            <TodoItemList
+                items={tasksList}
+            />
+            
         </div>
     )
 }
 
-export default TodoList
+
+
+
+
+
+
+
+
+
+
+
+
+function ListRenderingTest(){
+    const people = [
+        'Creola Katherine Johnson: mathematician',
+        'Mario José Molina-Pasquel Henríquez: chemist',
+        'Mohammad Abdus Salam: physicist',
+    ]
+    const listItems = people.map(person=> <li key={generateId()}>{person}</li>)
+    
+    return (
+        <ol style={{listStylePosition: "inside", paddingLeft:0}}>
+            {listItems}
+        </ol>
+    )
+}
