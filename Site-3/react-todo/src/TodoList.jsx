@@ -23,7 +23,7 @@ export default function TodoList() {
             
             
             
-            <TodoItemList
+            <TodoItemsList
                 items={tasksList}
             />
 
@@ -66,7 +66,7 @@ function TodoForm({addTask}) {
     )
 }
 
-function TodoItemList({items}){
+function TodoItemsList({items}){
 
     const test = ["Item 1", "Item 2", "Item 3"]
 
@@ -74,8 +74,8 @@ function TodoItemList({items}){
     const listItems = items.map(todoItem=> <TodoItemDisplay key={todoItem.id} todoItem={todoItem}/>)
     //^^ todo: cache it or something so it doesnt have to rerender ones that are already there?
     return (
-        <ul>
-            {[listItems]}
+        <ul className='todoItemsList'>
+            {listItems.reverse()}
         </ul>
     )
 }
