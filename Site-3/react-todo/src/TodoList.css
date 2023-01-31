@@ -9,3 +9,8 @@
     list-style-position: inside;
     padding-right: 10px; /* TODO better than this*/
 }
+
+.todoItem.completed{
+    text-decoration: line-through;
+    opacity: 50%;
+}

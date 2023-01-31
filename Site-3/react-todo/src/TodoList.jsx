@@ -2,6 +2,37 @@ import { useState } from 'react';
 import './TodoList.css'
 import generateId from "./util_functions/id.js"
 
+
+export default function TodoList() {
+
+    const [tasksList, setTasksList] = useState([])
+    
+    function addTask(task){
+        setTasksList(prev=>[...prev, task])
+        //console.log(tasksList) //state doesnt update immediatly thats how react works, would need to use useeffect to listen for state change.
+    }
+
+    
+    return (
+        <div className="TodoList">
+            <h1> Todo List </h1>
+            
+            <TodoForm
+                addTask={addTask}
+            />
+            
+            
+            
+            <TodoItemList
+                items={tasksList}
+            />
+
+            <p>Items: {tasksList.length}</p>
+            
+        </div>
+    )
+}
+
 function TodoForm({addTask}) {
     function handleSubmit(e) {
         e.preventDefault();
@@ -15,7 +46,7 @@ function TodoForm({addTask}) {
         // Maybe typescript has templates for this kind of thing
         //ALTERNATIVELY: should this be in the parent function thats passed in 
         //and the parent function just gets called with todotext and generates id and the object itself 
-        //so its not as dispersed?
+        //so its not as dispersed?  //TODO
         addTask({
             text: todoText,
             isCompleted: false,
@@ -24,7 +55,7 @@ function TodoForm({addTask}) {
     }
 
     return (
-        <form className='addItemInput' onSubmit={handleSubmit}>
+        <form className='addItemInput' onSubmit={handleSubmit} autoComplete="off">
                 <input type="text" name="addItemInput" id="addItemInput"
                 placeholder='Add Item'
                 autoFocus/>
@@ -39,49 +70,23 @@ function TodoItemList({items}){
 
     const test = ["Item 1", "Item 2", "Item 3"]
 
-    const listItems = items.map(todoItem=> <li key={todoItem.id}>{todoItem.text}</li>)
+    const listItemsOld = items.map(todoItem=> <li key={todoItem.id}>{todoItem.text}</li>)
+    const listItems = items.map(todoItem=> <TodoItemDisplay key={todoItem.id} todoItem={todoItem}/>)
+    //^^ todo: cache it or something so it doesnt have to rerender ones that are already there?
     return (
         <ul>
             {[listItems]}
         </ul>
     )
-
-    {items.length!==0 && <> <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-            <li>Item 5</li> </>}
 }
 
-
-export default function TodoList() {
-
-    const [tasksList, setTasksList] = useState([])
-    
-    function addTask(task){
-        setTasksList(prev=>[...prev, task])
-        console.log(tasksList) //state doesnt update immediatly thats how react works, would need to use useeffect to listen for state change.
-    }
-
-    
+function TodoItemDisplay({todoItem}){
     return (
-        <div className="TodoList">
-            <h1> Todo List </h1>
-            
-            <TodoForm
-                addTask={addTask}
-            />
-            
-            <p>Items: {tasksList.length}</p>
-            
-            <TodoItemList
-                items={tasksList}
-            />
-            
-        </div>
+        <li className={`todoItem ${todoItem.isCompleted && "completed"}`}>
+            {todoItem.text}
+        </li>
     )
 }
-
 
 
 
