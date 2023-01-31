@@ -82,7 +82,7 @@ function TodoItemList({items}){
 
 function TodoItemDisplay({todoItem}){
     return (
-        <li className={`todoItem ${todoItem.isCompleted && "completed"}`}>
+        <li className={`todoItem ${todoItem.isCompleted ? "completed" : ""}`}>
             {todoItem.text}
         </li>
     )
