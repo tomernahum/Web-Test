@@ -73,13 +73,36 @@ p {
 body{
     background-color: var(--background-color);
     transition: background-color var(--background-transition-speed);
+    color: var(--text-color);
+    
+    margin-top: 0;
+margin-bottom: 0;
+    /* For footer primarily */
+    display: flex;
+    flex-direction: column;
+    min-height:100vh;
 }
+
+#main-div{
+    flex:1;
+}
+
 
 * {
     font-size: calc(var(--font-size) * 1);
 }
 /*  */
 
+.dark a:visited{
+    color: mediumorchid;
+}
+.dark a:link{
+    color: lightskyblue;
+}
+
+a:visited {
+    /* transition: color 6099ms; */
+}
 
 
 
@@ -160,7 +183,7 @@ body{
 }
 /* Replace Split universe text with split text if screen is small  so that button doesn't take two lines. 
 Not sure if this is best approach or not*/
-@media only screen and (max-width: 324px) {
+@media only screen and (max-width: 360px) {
     .main-button p {
         display:none;
     }
@@ -168,11 +191,7 @@ Not sure if this is best approach or not*/
         content: "Split";
     }
 }
-
-/* TODO: make button text shrink 
-or become "Split"
-if screen width is too small 
-instead of taking up 2 lines*/
+/* TODO: maybe do the same for "You are in" */
 
 .loading-image-container {
 
@@ -237,3 +256,26 @@ instead of taking up 2 lines*/
 
 
 
+.footer {
+    display:flex;
+    justify-content: space-around;
+    gap: 10px;
+    border: 1px solid var(--text-color);
+    /* width: 95%; */
+    margin-top: 50px;
+    margin-bottom: 1px;;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer > *{
+    font-size: 50%; /*Seems to do it relative to default font size so font size variable still affects it*/
+    text-align: center;
+
+    
+}
+
+
+
+
+/* TODO: extract transition to var probably */
