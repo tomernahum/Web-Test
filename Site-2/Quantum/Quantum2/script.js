@@ -45,24 +45,17 @@ function toggleLoading(on) {
     }
 }
 
-
+//TODO: will refactor this part
 async function onButtonClick(e) {
-    //const universeNumber = splitUniverseFake()
-    
-    // splitUniverseANUOldApi()
-    // .then( universeNumber => {
-    //     console.log("Universe Number: " + universeNumber)
-    //     output(`You are in Universe ${universeNumber}`)
-    // })
-    // .catch( error => {
-    //     console.error(error)
-    //     output(`error splitting the universe: ${error}`)
-    // })
+
+    async function splitUniverse() {
+        return await splitUniverseANUOldApi()
+    }
 
     toggleLoading(true)
     
     try {
-        const universeNumber = await splitUniverseANUOldApi()
+        const universeNumber = await splitUniverse()
         // output(`You are in Universe ${universeNumber}`)
         output(`You are in Universe ${universeNumber}/${window.numUniverses}`)
     }
@@ -70,11 +63,12 @@ async function onButtonClick(e) {
         output(`error splitting the universe: ${error}`)
     }
     
-    
     toggleLoading(false)
     
     
-}
+}   
+
+
 //
 
 // ---- Slider ----
@@ -125,7 +119,7 @@ function toggleTheme(){
 //
 
 
-// So poky arounds can see that its not finished
+// 
 function logToDoList(){
     fetch("./todo.txt")
     .then((response)=> response.text())
@@ -134,7 +128,6 @@ function logToDoList(){
     })
     .catch((error) => {})//do nothing
 }
-logToDoList()
 //
 
 
