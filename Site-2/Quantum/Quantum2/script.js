@@ -43,6 +43,7 @@ function output(s)  {
     const element = document.createElement("li")
     element.innerText = s
     outputArea.appendChild(element)
+    element.scrollIntoView({behavior:"smooth"})
 
 }
 
