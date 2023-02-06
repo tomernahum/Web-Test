@@ -5,6 +5,7 @@ const body = document.querySelector("body")
 const themeButton = document.querySelector("#theme-toggle")
 
 const mainDiv = document.querySelector("#main-div")
+const buttonContainerForm = document.querySelector(".button-and-slider-container")
 const outputArea = mainDiv.querySelector(".output-area")
 const mainButton = mainDiv.querySelector(".main-button")
 const loadingImg = mainDiv.querySelector(".loading-image")
@@ -16,12 +17,21 @@ window.onload = () => {
 //     const mainDiv = document.querySelector("#main-div")
 //     const outputArea = mainDiv.querySelector(".output-area")
 //     const mainButton = mainDiv.querySelector(".main-button")
-    mainButton.addEventListener("click", onButtonClick)
     themeButton.addEventListener("click", onThemeButtonClick)
     slider.addEventListener("input", onSliderChange)
 
+    //mainButton.addEventListener("click", onButtonClick)
+    buttonContainerForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        onButtonClick();
+    })
+
+
+
     window.numUniverses = slider.value
 }
+
+
 
 //---- Main button and output ----
 function output(s)  {
@@ -80,8 +90,8 @@ function onSliderChange(e){
     // console.log(value)
     sliderDisplay.innerText = value;
 
-    window.numUniverses = value;
-    console.log(window.numUniverses)
+    window.numUniverses = value; //global
+    //console.log(window.numUniverses)
     
 }
 
