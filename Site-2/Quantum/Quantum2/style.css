@@ -262,6 +262,7 @@ Not sure if this is best approach or not*/
 .footer {
     display:flex;
     justify-content: space-between;
+    
     align-items: center;
     flex-wrap:wrap;
     gap: 5px;
@@ -282,6 +283,7 @@ Not sure if this is best approach or not*/
     }
 }
 
+
 .footer > *{
     /* font-size: 50%; Seems to do it relative to default font size so font size variable still affects it */
     text-align: center;
@@ -289,11 +291,14 @@ Not sure if this is best approach or not*/
     /* border: 1.5px solid grey; */
     padding:1px 3px;
 }
+
+/* Footer Sizing */
+/* Not working properly on my phone */
 .footer > *{
     font-size: min(calc(5vw - 2px), 60%);
 }
 
-@media screen and (max-width: 250px) {
+@media screen and (max-width: 200px) {
     .footer > *{
         font-size: 16px ;
         /* background-color: green; */

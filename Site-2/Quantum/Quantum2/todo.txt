@@ -1,4 +1,5 @@
 Todo List:
+- A lot of weird stuff on mobile i have no idea why :`(
 - Semantic HTML + HTML SEO
 - Animations
 
